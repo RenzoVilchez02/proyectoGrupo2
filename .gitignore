@@ -1,0 +1,34 @@
+# Entornos locales: se reconstruyen con requirements.txt
+.venv/
+venv/
+env/
+
+# Cachés de Python y Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Configuración local del editor
+.vscode/
+
+# Variables de entorno y credenciales locales
+.env
+.env.*
+!.env.example
+
+# Respaldo local anterior a la recuperación del CSV oficial
+/data/backup/
+
+# Archivos del sistema y temporales de Office
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+
+# Modelos binarios de trabajo
+*.ckpt
+*.pth
+
+# Se mantienen versionados el CSV oficial, los notebooks y el informe PDF.
