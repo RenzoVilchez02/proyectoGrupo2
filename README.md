@@ -121,9 +121,9 @@ Según las instrucciones de Canvas, se entregan:
 2. **Notebook `.ipynb`**, documentado y ejecutable.
 3. **Enlace a GitHub**, accesible para el docente.
 
-El informe PDF está pendiente de elaboración y revisión del equipo. Cuando esté listo,
-se incorporará al repositorio y se añadirá su enlace aquí. El notebook no sustituye el PDF.
-Las cifras del informe deben coincidir con las salidas verificadas del notebook.
+El informe editable está en [Informe_Sumativa1.docx](Informe_Sumativa1.docx), con ocho páginas
+incluidas las referencias. Sus cifras se contrastaron con la ejecución del notebook.
+Queda pendiente la revisión del equipo y exportarlo a PDF para Canvas. El notebook no sustituye el PDF.
 
 Guardar archivos localmente no los publica en GitHub: el equipo debe revisar y subir los cambios.
 
@@ -132,3 +132,48 @@ Guardar archivos localmente no los publica en GitHub: el equipo debe revisar y s
 - Sakar, C. y Kastro, Y. (2018). *Online Shoppers Purchasing Intention Dataset*.
   UCI Machine Learning Repository. https://doi.org/10.24432/C5F88Q
 - Instrucciones y rúbrica de Sumativa 1, Fase 2, MCDI501, disponibles en Canvas.
+
+
+## Sumativa 2: validación, simulación y remuestreo
+
+La evaluación continúa los resultados de S1 con bootstrap no paramétrico, permutación,
+estabilidad de Spearman, cohortes sintéticas Monte Carlo y análisis de robustez.
+
+```text
+S1/
+├── Definicion.ipynb          # copia idéntica del original conservado en F1
+└── resultados_s1.json       # referencia extraída al reproducir S1, con hashes y unidades
+S2/
+├── Validacion_Simulacion.ipynb
+└── resultados_validados.json
+```
+
+- **Abrir y ejecutar:** [S2/Validacion_Simulacion.ipynb](S2/Validacion_Simulacion.ipynb).
+  Usar la misma `.venv` del proyecto, reiniciar el kernel y ejecutar todas las celdas en orden.
+  No se instalan nuevas dependencias ni se necesita internet. Ejecutar desde la carpeta S2
+  o cualquier carpeta dentro del repositorio; las rutas se resuelven automáticamente.
+- **Referencia:** la copia de S1 conserva exactamente el notebook de `F1/Definicion.ipynb`
+  integrado en el commit `5fbcaf4`. El original no se mueve ni se modifica. Los resultados
+  de referencia se extrajeron de una reproducción completa de S1; S2 comprueba los hashes
+  de contenido y reproduce sus tres IC t, Welch y Spearman antes de validar. Los hashes LF
+  permiten diferencias de fin de línea de Git, sin aceptar cambios de contenido.
+- **Métodos:** 10.000 remuestras por media (percentil y BCa), 10.000 permutaciones por
+  contraste y 10.000 remuestras emparejadas por correlación; 10.000 cohortes por escenario
+  Monte Carlo. Se procesan lotes y multiplicidades para controlar memoria sin submuestrear
+  el dataset. Semilla maestra: `20261015`; subsemillas por bloque documentadas en el notebook.
+- **Salida:** todas las tablas y ocho figuras permanecen en el notebook. Al terminar se
+  genera únicamente [S2/resultados_validados.json](S2/resultados_validados.json), con las
+  cifras, configuración, observaciones influyentes, limitaciones y recomendaciones para S3.
+  La fecha UTC y los tiempos medidos pueden cambiar entre ejecuciones; las cifras aleatorias
+  se reproducen con el entorno y semillas indicados.
+- **Interpretación:** los recortes cambian el estimando; mantener un signo no garantiza
+  estabilidad de magnitud. Monte Carlo condiciona en las probabilidades estimadas de S1,
+  sin propagar incertidumbre de parámetros ni validar causalidad o predicciones externas.
+- **Informe:** su redacción queda a cargo de los compañeros. No se genera ni añade un PDF
+  de S2 en este trabajo. La entrega de Canvas exige, además del notebook y enlace GitHub,
+  el informe PDF de máximo siete páginas. Revisarlo después contra las cifras de S2.
+- **Estado de revisión:** la ejecución completa y los algoritmos se verifican localmente;
+  quedan la revisión del grupo y la reproducción en otro equipo. Guardar cambios no los
+  publica: no se realiza commit, push ni entrega en Canvas automáticamente.
+
+Referencia docente: [ejemplo oficial de Sumativa 2](https://github.com/jpmaidana/MCDI501-202682/tree/main/03-evaluaciones/Sumativa-2-validacion-simulacion-remuestreo).

@@ -1,0 +1,1326 @@
+{
+  "schema_version": 1,
+  "proyecto": "Online Shoppers Purchasing Intention — Grupo 2 — Sumativa 2",
+  "generado_UTC": "2026-10-16T14:06:21.677502+00:00",
+  "procedencia": {
+    "S1": {
+      "notebook": "S1/Definicion.ipynb",
+      "sha256_notebook": "0f268fab7a955dba257d3c800aa47c38290bd9703bbac515ca4e5caf1a1e8b86",
+      "sha256_csv": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+      "commit_notebook_S1": "5fbcaf4",
+      "descripcion": "Resultados extraídos al reproducir íntegramente el código de S1 sin modificarlo.",
+      "semilla_S1": 20261009,
+      "versiones": {
+        "ipykernel": "7.3.0",
+        "jupyterlab": "4.6.3",
+        "matplotlib": "3.11.2",
+        "notebook": "7.6.2",
+        "numpy": "2.5.3",
+        "pandas": "3.0.5",
+        "scikit-learn": "1.9.1",
+        "scipy": "1.18.1"
+      },
+      "sha256_notebook_LF": "0f268fab7a955dba257d3c800aa47c38290bd9703bbac515ca4e5caf1a1e8b86",
+      "sha256_csv_LF": "d8e130ba51532985f93281a73ce299e6ce150cb915769a7962a11e595eadd6a1"
+    },
+    "sha256_csv_verificado": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+    "notebook_S2": "S2/Validacion_Simulacion.ipynb",
+    "referencia_docente": "https://github.com/jpmaidana/MCDI501-202682/tree/main/03-evaluaciones/Sumativa-2-validacion-simulacion-remuestreo"
+  },
+  "configuracion": {
+    "semilla_maestra": 20261015,
+    "generadores": "SeedSequence([semilla, numero_bloque])",
+    "B_bootstrap": 10000,
+    "B_permutacion": 10000,
+    "B_correlaciones": 10000,
+    "B_MonteCarlo": 10000,
+    "alpha": 0.05,
+    "confianza": 0.95,
+    "margen_MC_objetivo_pp": 0.1,
+    "python": "3.13.5",
+    "versiones": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "ipykernel": "7.3.0"
+    },
+    "bloques_semillas": {
+      "bootstrap": [
+        100,
+        101,
+        102
+      ],
+      "permutacion": [
+        200,
+        201
+      ],
+      "correlaciones": [
+        300,
+        301,
+        302
+      ],
+      "sinteticos": 400,
+      "cohortes": [
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419
+      ],
+      "replicas_MC": [
+        450,
+        451,
+        452,
+        453
+      ],
+      "mezcla": [
+        470,
+        471,
+        472
+      ]
+    }
+  },
+  "diagnostico_kernel": {
+    "correcto": true,
+    "errores": [],
+    "avisos": [],
+    "python": "3.13.5",
+    "interprete": "d:\\Magister UNAB\\Curso 02 Estadística Computacional\\proyectoGrupo2\\.venv\\Scripts\\python.exe",
+    "paquetes": [
+      {
+        "paquete": "ipykernel",
+        "instalada": "7.3.0",
+        "requerida": "7.3.0",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "jupyterlab",
+        "instalada": "4.6.3",
+        "requerida": "4.6.3",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "matplotlib",
+        "instalada": "3.11.2",
+        "requerida": "3.11.2",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "notebook",
+        "instalada": "7.6.2",
+        "requerida": "7.6.2",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "numpy",
+        "instalada": "2.5.3",
+        "requerida": "2.5.3",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "pandas",
+        "instalada": "3.0.5",
+        "requerida": "3.0.5",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "scikit-learn",
+        "instalada": "1.9.1",
+        "requerida": "1.9.1",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "scipy",
+        "instalada": "1.18.1",
+        "requerida": "1.18.1",
+        "estado": "OK",
+        "importacion": "OK"
+      }
+    ]
+  },
+  "unidades": {
+    "ProductRelated": "páginas",
+    "ProductRelated_Duration": "minutos",
+    "BounceRates": "porcentaje",
+    "diferencia_BounceRates": "puntos porcentuales",
+    "Spearman": "adimensional",
+    "MCSE_y_DE_tasa": "puntos porcentuales"
+  },
+  "bootstrap_medias": [
+    {
+      "variable": "Páginas de productos",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 31.731467964314678,
+      "t_inf": 30.946358772754994,
+      "t_sup": 32.516577155874366,
+      "percentil_inf": 30.960014193025142,
+      "percentil_sup": 32.51558191403082,
+      "BCa_inf": 30.964966419427174,
+      "BCa_sup": 32.52216960059068,
+      "SE_bootstrap": 0.39757421012456673,
+      "z0": -0.004386613548709899,
+      "aceleracion": 0.006515621082883243,
+      "cambio_amplitud_pct_%": -0.9330334093140769,
+      "cambio_amplitud_BCa_%": -0.8288784602056842
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 19.912436999480448,
+      "t_inf": 19.349415697164638,
+      "t_sup": 20.47545830179626,
+      "percentil_inf": 19.362146094393907,
+      "percentil_sup": 20.49233407895711,
+      "BCa_inf": 19.367710737333766,
+      "BCa_sup": 20.496504922003787,
+      "SE_bootstrap": 0.2877916924377081,
+      "z0": -0.011280066443693096,
+      "aceleracion": 0.010900440051032665,
+      "cambio_amplitud_pct_%": 0.36813704157627747,
+      "cambio_amplitud_BCa_%": 0.24435843076278108
+    },
+    {
+      "variable": "Rebote (%)",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 2.2191380470721818,
+      "t_inf": 2.1335434516105187,
+      "t_sup": 2.3047326425338452,
+      "percentil_inf": 2.1356857704975662,
+      "percentil_sup": 2.3039737008813868,
+      "BCa_inf": 2.1369094230250996,
+      "BCa_sup": 2.3055522175445504,
+      "SE_bootstrap": 0.042872891695097386,
+      "z0": 0.010277356845819739,
+      "aceleracion": 0.004424055119583444,
+      "cambio_amplitud_pct_%": -1.6947685329067763,
+      "cambio_amplitud_BCa_%": -1.4874749919321695
+    }
+  ],
+  "permutaciones": [
+    {
+      "variable": "Páginas de productos",
+      "B": 10000,
+      "t_S1": 14.001713516383052,
+      "diferencia_S1": 19.495525611641558,
+      "p_Welch_S1": 8.834784925440105e-43,
+      "p_Holm_S1": 8.834784925440105e-43,
+      "excedencias": 0,
+      "p_permutacion": 9.999000099990002e-05,
+      "cola_MC_Wilson_inf": 0.0,
+      "cola_MC_Wilson_sup": 0.00038399837067659573,
+      "p_perm_Holm": 0.00019998000199980003,
+      "decision_perm": "Rechazar H₀",
+      "concordancia_S1": true
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "B": 10000,
+      "t_S1": 14.446988997552614,
+      "diferencia_S1": 13.437030095574364,
+      "p_Welch_S1": 2.1737910437733234e-45,
+      "p_Holm_S1": 4.347582087546647e-45,
+      "excedencias": 0,
+      "p_permutacion": 9.999000099990002e-05,
+      "cola_MC_Wilson_inf": 0.0,
+      "cola_MC_Wilson_sup": 0.00038399837067659573,
+      "p_perm_Holm": 0.00019998000199980003,
+      "decision_perm": "Rechazar H₀",
+      "concordancia_S1": true
+    }
+  ],
+  "correlaciones": [
+    {
+      "x": "ProductRelated",
+      "y": "ProductRelated_Duration",
+      "relacion": "Páginas de productos / Duración en productos (min)",
+      "rho_S1": 0.8826717951893844,
+      "IC95_inf": 0.8773561143328344,
+      "IC95_sup": 0.8876920590410747,
+      "amplitud": 0.010335944708240286,
+      "SE_bootstrap": 0.002646118304081993,
+      "incluye_cero": false,
+      "fraccion_mismo_signo": 1.0,
+      "B": 10000
+    },
+    {
+      "x": "BounceRates",
+      "y": "ExitRates",
+      "relacion": "Rebote (%) / Salida (%)",
+      "rho_S1": 0.6022763357682258,
+      "IC95_inf": 0.5883769696444996,
+      "IC95_sup": 0.6158673914080993,
+      "amplitud": 0.027490421763599726,
+      "SE_bootstrap": 0.007089557099816766,
+      "incluye_cero": false,
+      "fraccion_mismo_signo": 1.0,
+      "B": 10000
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ExitRates",
+      "relacion": "Páginas de productos / Salida (%)",
+      "rho_S1": -0.5189200521932623,
+      "IC95_inf": -0.533148843558614,
+      "IC95_sup": -0.504696900923511,
+      "amplitud": 0.028451942635102978,
+      "SE_bootstrap": 0.007241653549977989,
+      "incluye_cero": false,
+      "fraccion_mismo_signo": 1.0,
+      "B": 10000
+    }
+  ],
+  "montecarlo": [
+    {
+      "N": 100,
+      "composicion": "Aleatoria",
+      "B": 10000,
+      "compras_esperadas": 15.474452554744525,
+      "compras_media_MC": 15.4369,
+      "var_compras_teorica": 13.079865736054131,
+      "var_compras_MC": 13.181336523652366,
+      "tasa_teorica_%": 15.474452554744525,
+      "tasa_media_%": 15.436900000000001,
+      "DE_tasa_pp": 3.630611039983816,
+      "P2_5_tasa_%": 9.0,
+      "P97_5_tasa_%": 23.0,
+      "MCSE_media_pp": 0.03630611039983816,
+      "margen_MC95_pp": 0.07115866880241789,
+      "p_alcanza_conversion_S1": 0.4827,
+      "p_evento_MC95_inf": 0.47291456933995657,
+      "p_evento_MC95_sup": 0.49249871700366876,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -1.0343315307246943
+    },
+    {
+      "N": 100,
+      "composicion": "Fija",
+      "B": 10000,
+      "compras_esperadas": 15.518317985742975,
+      "compras_media_MC": 15.5315,
+      "var_compras_teorica": 12.964139676908069,
+      "var_compras_MC": 13.032110961096109,
+      "tasa_teorica_%": 15.518317985742975,
+      "tasa_media_%": 15.531500000000001,
+      "DE_tasa_pp": 3.610001518157037,
+      "P2_5_tasa_%": 9.0,
+      "P97_5_tasa_%": 23.0,
+      "MCSE_media_pp": 0.03610001518157037,
+      "margen_MC95_pp": 0.0707547295972271,
+      "p_alcanza_conversion_S1": 0.4875,
+      "p_evento_MC95_inf": 0.4777099229531703,
+      "p_evento_MC95_sup": 0.49729967700609656,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": 0.3651525959400764
+    },
+    {
+      "N": 500,
+      "composicion": "Aleatoria",
+      "B": 10000,
+      "compras_esperadas": 77.37226277372262,
+      "compras_media_MC": 77.2643,
+      "var_compras_teorica": 65.39932868027066,
+      "var_compras_MC": 64.8407295829583,
+      "tasa_teorica_%": 15.474452554744525,
+      "tasa_media_%": 15.452860000000001,
+      "DE_tasa_pp": 1.6104748316314452,
+      "P2_5_tasa_%": 12.4,
+      "P97_5_tasa_%": 18.6,
+      "MCSE_media_pp": 0.016104748316314452,
+      "margen_MC95_pp": 0.0315647266800584,
+      "p_alcanza_conversion_S1": 0.4859,
+      "p_evento_MC95_inf": 0.47611137132685805,
+      "p_evento_MC95_sup": 0.49569945742719496,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -1.3407570438495866
+    },
+    {
+      "N": 500,
+      "composicion": "Fija",
+      "B": 10000,
+      "compras_esperadas": 77.3839746793145,
+      "compras_media_MC": 77.287,
+      "var_compras_teorica": 64.68777329722418,
+      "var_compras_MC": 63.83301430143015,
+      "tasa_teorica_%": 15.476794935862902,
+      "tasa_media_%": 15.4574,
+      "DE_tasa_pp": 1.5979113154543982,
+      "P2_5_tasa_%": 12.4,
+      "P97_5_tasa_%": 18.6,
+      "MCSE_media_pp": 0.01597911315454398,
+      "margen_MC95_pp": 0.03131848628779642,
+      "p_alcanza_conversion_S1": 0.4766,
+      "p_evento_MC95_inf": 0.4668217790522704,
+      "p_evento_MC95_sup": 0.4863961920714772,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -1.21376797794226
+    },
+    {
+      "N": 1000,
+      "composicion": "Aleatoria",
+      "B": 10000,
+      "compras_esperadas": 154.74452554744525,
+      "compras_media_MC": 154.6525,
+      "var_compras_teorica": 130.7986573605413,
+      "var_compras_MC": 131.94513826382638,
+      "tasa_teorica_%": 15.474452554744525,
+      "tasa_media_%": 15.46525,
+      "DE_tasa_pp": 1.1486737494337826,
+      "P2_5_tasa_%": 13.200000000000001,
+      "P97_5_tasa_%": 17.7,
+      "MCSE_media_pp": 0.011486737494337826,
+      "margen_MC95_pp": 0.022513591788768002,
+      "p_alcanza_conversion_S1": 0.4997,
+      "p_evento_MC95_inf": 0.48990217877786774,
+      "p_evento_MC95_sup": 0.5094980516211546,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -0.8011460825200686
+    },
+    {
+      "N": 1000,
+      "composicion": "Fija",
+      "B": 10000,
+      "compras_esperadas": 154.70707013090487,
+      "compras_media_MC": 154.85,
+      "var_compras_teorica": 129.3412928857651,
+      "var_compras_MC": 127.0916091609161,
+      "tasa_teorica_%": 15.470707013090486,
+      "tasa_media_%": 15.485,
+      "DE_tasa_pp": 1.1273491436148615,
+      "P2_5_tasa_%": 13.3,
+      "P97_5_tasa_%": 17.7,
+      "MCSE_media_pp": 0.011273491436148614,
+      "margen_MC95_pp": 0.022095637194872012,
+      "p_alcanza_conversion_S1": 0.5059,
+      "p_evento_MC95_inf": 0.49610047811926494,
+      "p_evento_MC95_sup": 0.5156949906999612,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": 1.2678403128671265
+    },
+    {
+      "N": 5000,
+      "composicion": "Aleatoria",
+      "B": 10000,
+      "compras_esperadas": 773.7226277372263,
+      "compras_media_MC": 773.4465,
+      "var_compras_teorica": 653.9932868027066,
+      "var_compras_MC": 649.2012578757876,
+      "tasa_teorica_%": 15.474452554744525,
+      "tasa_media_%": 15.46893,
+      "DE_tasa_pp": 0.50958856261725,
+      "P2_5_tasa_%": 14.48,
+      "P97_5_tasa_%": 16.48,
+      "MCSE_media_pp": 0.005095885626172501,
+      "margen_MC95_pp": 0.009987752296633443,
+      "p_alcanza_conversion_S1": 0.4988,
+      "p_evento_MC95_inf": 0.4890025508207165,
+      "p_evento_MC95_sup": 0.5085983707753732,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -1.0837281582932146
+    },
+    {
+      "N": 5000,
+      "composicion": "Fija",
+      "B": 10000,
+      "compras_esperadas": 773.7060211171979,
+      "compras_media_MC": 773.892,
+      "var_compras_teorica": 646.8078623057363,
+      "var_compras_MC": 657.710507050705,
+      "tasa_teorica_%": 15.47412042234396,
+      "tasa_media_%": 15.47784,
+      "DE_tasa_pp": 0.5129173450179688,
+      "P2_5_tasa_%": 14.46,
+      "P97_5_tasa_%": 16.5,
+      "MCSE_media_pp": 0.005129173450179688,
+      "margen_MC95_pp": 0.010052995232811236,
+      "p_alcanza_conversion_S1": 0.5078,
+      "p_evento_MC95_inf": 0.4980002584559113,
+      "p_evento_MC95_sup": 0.5175937511695061,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": 0.7251807122863799
+    },
+    {
+      "N": 12330,
+      "composicion": "Aleatoria",
+      "B": 10000,
+      "compras_esperadas": 1908.0,
+      "compras_media_MC": 1908.0107,
+      "var_compras_teorica": 1612.7474452554745,
+      "var_compras_MC": 1585.5861441244124,
+      "tasa_teorica_%": 15.474452554744525,
+      "tasa_media_%": 15.474539334955391,
+      "DE_tasa_pp": 0.322947438634751,
+      "P2_5_tasa_%": 14.841849148418493,
+      "P97_5_tasa_%": 16.10705596107056,
+      "MCSE_media_pp": 0.0032294743863475104,
+      "margen_MC95_pp": 0.0063296534862357125,
+      "p_alcanza_conversion_S1": 0.5047,
+      "p_evento_MC95_inf": 0.49490068973930446,
+      "p_evento_MC95_sup": 0.5144957006760114,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": 0.026871311082118165
+    },
+    {
+      "N": 12330,
+      "composicion": "Fija",
+      "B": 10000,
+      "compras_esperadas": 1907.9999999999998,
+      "compras_media_MC": 1907.4413,
+      "var_compras_teorica": 1595.0566753452908,
+      "var_compras_MC": 1589.6193162416241,
+      "tasa_teorica_%": 15.474452554744524,
+      "tasa_media_%": 15.469921330089214,
+      "DE_tasa_pp": 0.32335790998774255,
+      "P2_5_tasa_%": 14.849959448499595,
+      "P97_5_tasa_%": 16.11516626115166,
+      "MCSE_media_pp": 0.0032335790998774252,
+      "margen_MC95_pp": 0.006337698576921199,
+      "p_alcanza_conversion_S1": 0.5026,
+      "p_evento_MC95_inf": 0.49280119583779264,
+      "p_evento_MC95_sup": 0.51239680737068,
+      "precision_objetivo_cumplida": true,
+      "error_vs_teoria_en_MCSE": -1.4013031737748647
+    }
+  ],
+  "convergencia": [
+    {
+      "B": 100,
+      "media_%": 15.496918085969181,
+      "MCSE_pp": 0.03335165814460306,
+      "margen95_pp": 0.06536804878811396
+    },
+    {
+      "B": 122,
+      "media_%": 15.495924906598596,
+      "MCSE_pp": 0.02978948747328114,
+      "margen95_pp": 0.058386322565538135
+    },
+    {
+      "B": 149,
+      "media_%": 15.500144243592045,
+      "MCSE_pp": 0.02628076210641524,
+      "margen95_pp": 0.05150934721483889
+    },
+    {
+      "B": 182,
+      "media_%": 15.488846109284065,
+      "MCSE_pp": 0.024054562789926317,
+      "margen95_pp": 0.04714607673211291
+    },
+    {
+      "B": 222,
+      "media_%": 15.472406713282627,
+      "MCSE_pp": 0.02142387949546499,
+      "margen95_pp": 0.04199003222023752
+    },
+    {
+      "B": 272,
+      "media_%": 15.478388435666238,
+      "MCSE_pp": 0.01976996241075587,
+      "margen95_pp": 0.03874841430079217
+    },
+    {
+      "B": 332,
+      "media_%": 15.496071878755902,
+      "MCSE_pp": 0.017800687802124304,
+      "margen95_pp": 0.03488870699220509
+    },
+    {
+      "B": 406,
+      "media_%": 15.48569910387177,
+      "MCSE_pp": 0.015990128963439088,
+      "margen95_pp": 0.0313400768764914
+    },
+    {
+      "B": 496,
+      "media_%": 15.481794338487298,
+      "MCSE_pp": 0.01474603814386356,
+      "margen95_pp": 0.028901703676626443
+    },
+    {
+      "B": 606,
+      "media_%": 15.479819271464859,
+      "MCSE_pp": 0.013587217825019494,
+      "margen95_pp": 0.026630457587138858
+    },
+    {
+      "B": 740,
+      "media_%": 15.484338352951491,
+      "MCSE_pp": 0.012178916505633073,
+      "margen95_pp": 0.023870237721761233
+    },
+    {
+      "B": 904,
+      "media_%": 15.482473139116767,
+      "MCSE_pp": 0.010905343329809119,
+      "margen95_pp": 0.02137408016546998
+    },
+    {
+      "B": 1105,
+      "media_%": 15.479054507822218,
+      "MCSE_pp": 0.009705859734153468,
+      "margen95_pp": 0.019023135517938303
+    },
+    {
+      "B": 1350,
+      "media_%": 15.474458562374213,
+      "MCSE_pp": 0.008680456303132359,
+      "margen95_pp": 0.017013381723513125
+    },
+    {
+      "B": 1649,
+      "media_%": 15.473370525625155,
+      "MCSE_pp": 0.0078038868011008015,
+      "margen95_pp": 0.015295337069585064
+    },
+    {
+      "B": 2015,
+      "media_%": 15.469167778562648,
+      "MCSE_pp": 0.007021551672381928,
+      "margen95_pp": 0.013761988393455564
+    },
+    {
+      "B": 2462,
+      "media_%": 15.466506964250772,
+      "MCSE_pp": 0.006455227972536405,
+      "margen95_pp": 0.012652014338166866
+    },
+    {
+      "B": 3007,
+      "media_%": 15.468009087204202,
+      "MCSE_pp": 0.005866421725440614,
+      "margen95_pp": 0.011497975299986925
+    },
+    {
+      "B": 3674,
+      "media_%": 15.468443780432942,
+      "MCSE_pp": 0.005294291491608591,
+      "margen95_pp": 0.01037662064720968
+    },
+    {
+      "B": 4489,
+      "media_%": 15.471720816334491,
+      "MCSE_pp": 0.004796972046352924,
+      "margen95_pp": 0.009401892445697136
+    },
+    {
+      "B": 5484,
+      "media_%": 15.469350341892628,
+      "MCSE_pp": 0.0043483499502078105,
+      "margen95_pp": 0.008522609294583846
+    },
+    {
+      "B": 6700,
+      "media_%": 15.47067581799034,
+      "MCSE_pp": 0.00392986069673353,
+      "margen95_pp": 0.007702385429857201
+    },
+    {
+      "B": 8185,
+      "media_%": 15.471177717631754,
+      "MCSE_pp": 0.0035519151052371407,
+      "margen95_pp": 0.006961625682408591
+    },
+    {
+      "B": 10000,
+      "media_%": 15.474539334955391,
+      "MCSE_pp": 0.0032294743863475104,
+      "margen95_pp": 0.0063296534862357125
+    }
+  ],
+  "replicas_MC": [
+    {
+      "replica": 1,
+      "media_%": 15.47419302514193,
+      "MCSE_pp": 0.003259723141010164
+    },
+    {
+      "replica": 2,
+      "media_%": 15.478420924574209,
+      "MCSE_pp": 0.0032159291315759886
+    },
+    {
+      "replica": 3,
+      "media_%": 15.474183292781833,
+      "MCSE_pp": 0.0032390190990270046
+    },
+    {
+      "replica": 4,
+      "media_%": 15.473018653690188,
+      "MCSE_pp": 0.0032779126965898388
+    }
+  ],
+  "sensibilidad_mezcla": [
+    {
+      "multiplicador_nuevos": 0.8,
+      "proporcion_nuevos": 0.10991078669910788,
+      "conversion_teorica_%": 15.172771529595215,
+      "conversion_MC_%": 15.172917274939174,
+      "cambio_vs_base_pp": -0.3016810251493113,
+      "compras_esperadas": 1870.8027295990898,
+      "P2_5_%": 14.54176804541768,
+      "P97_5_%": 15.806974858069747
+    },
+    {
+      "multiplicador_nuevos": 1.0,
+      "proporcion_nuevos": 0.13738848337388485,
+      "conversion_teorica_%": 15.474452554744525,
+      "conversion_MC_%": 15.4780600162206,
+      "cambio_vs_base_pp": 0.0,
+      "compras_esperadas": 1908.0,
+      "P2_5_%": 14.841849148418493,
+      "P97_5_%": 16.123276561232768
+    },
+    {
+      "multiplicador_nuevos": 1.2,
+      "proporcion_nuevos": 0.1648661800486618,
+      "conversion_teorica_%": 15.776133579893834,
+      "conversion_MC_%": 15.776709651257098,
+      "cambio_vs_base_pp": 0.3016810251493085,
+      "compras_esperadas": 1945.1972704009097,
+      "P2_5_%": 15.133617193836171,
+      "P97_5_%": 16.415247364152474
+    }
+  ],
+  "validacion_cohorte_sintetica": [
+    {
+      "VisitorType": "New_Visitor",
+      "n_sintetico": 1720,
+      "compras_sinteticas": 405,
+      "proporcion_sintetica": 0.13949716139497162,
+      "proporcion_S1": 0.13738848337388485,
+      "conversion_sintetica": 0.23546511627906977,
+      "conversion_S1": 0.24911452184179456
+    },
+    {
+      "VisitorType": "Other",
+      "n_sintetico": 79,
+      "compras_sinteticas": 12,
+      "proporcion_sintetica": 0.006407137064071371,
+      "proporcion_S1": 0.006893755068937551,
+      "conversion_sintetica": 0.1518987341772152,
+      "conversion_S1": 0.18823529411764706
+    },
+    {
+      "VisitorType": "Returning_Visitor",
+      "n_sintetico": 10531,
+      "compras_sinteticas": 1397,
+      "proporcion_sintetica": 0.854095701540957,
+      "proporcion_S1": 0.8557177615571776,
+      "conversion_sintetica": 0.13265596809419808,
+      "conversion_S1": 0.1393232868922377
+    }
+  ],
+  "robustez": [
+    {
+      "variable": "ProductRelated",
+      "nombre": "Páginas de productos",
+      "escenario": "Completo",
+      "n": 12330,
+      "excluidas": 0,
+      "media": 31.731467964314678,
+      "mediana": 18.0,
+      "media_recortada_5%": 25.2912236438998,
+      "cambio_media_%": 0.0,
+      "diferencia_con_menos_sin": 19.495525611641558,
+      "IC95_dif_inf": 16.765074140990766,
+      "IC95_dif_sup": 22.22597708229235,
+      "cambio_magnitud_dif_%": 0.0,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated",
+      "nombre": "Páginas de productos",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "excluidas": 125,
+      "media": 32.04563703400246,
+      "mediana": 18.0,
+      "media_recortada_5%": 25.593718707328176,
+      "cambio_media_%": 0.9900867808608771,
+      "diferencia_con_menos_sin": 19.159764684875956,
+      "IC95_dif_inf": 16.42722121815292,
+      "IC95_dif_sup": 21.892308151598993,
+      "cambio_magnitud_dif_%": -1.722246085866519,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated",
+      "nombre": "Páginas de productos",
+      "escenario": "IQR 1.5",
+      "n": 11343,
+      "excluidas": 987,
+      "media": 21.66649034646919,
+      "mediana": 16.0,
+      "media_recortada_5%": 19.962190224311883,
+      "cambio_media_%": -31.71923098283571,
+      "diferencia_con_menos_sin": 8.494031590637668,
+      "IC95_dif_inf": 7.4485017421026,
+      "IC95_dif_sup": 9.539561439172736,
+      "cambio_magnitud_dif_%": -56.43086644678335,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated",
+      "nombre": "Páginas de productos",
+      "escenario": "IQR 3",
+      "n": 11917,
+      "excluidas": 413,
+      "media": 25.644373583955694,
+      "mediana": 17.0,
+      "media_recortada_5%": 22.694415959727788,
+      "cambio_media_%": -19.183147742186247,
+      "diferencia_con_menos_sin": 11.154425424761747,
+      "IC95_dif_inf": 9.72838475155143,
+      "IC95_dif_sup": 12.580466097972065,
+      "cambio_magnitud_dif_%": -42.784689949056855,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "nombre": "Duración en productos (min)",
+      "escenario": "Completo",
+      "n": 12330,
+      "excluidas": 0,
+      "media": 19.912436999480448,
+      "mediana": 9.982281745833331,
+      "media_recortada_5%": 15.417652199394237,
+      "cambio_media_%": 0.0,
+      "diferencia_con_menos_sin": 13.437030095574364,
+      "IC95_dif_inf": 11.613143836937462,
+      "IC95_dif_sup": 15.260916354211268,
+      "cambio_magnitud_dif_%": 0.0,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "nombre": "Duración en productos (min)",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "excluidas": 125,
+      "media": 20.116374289520188,
+      "mediana": 10.149047618333332,
+      "media_recortada_5%": 15.615485377359478,
+      "cambio_media_%": 1.0241704219581926,
+      "diferencia_con_menos_sin": 13.220545559391807,
+      "IC95_dif_inf": 11.394830810956789,
+      "IC95_dif_sup": 15.046260307826826,
+      "cambio_magnitud_dif_%": -1.611104050841261,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "nombre": "Duración en productos (min)",
+      "escenario": "IQR 1.5",
+      "n": 11369,
+      "excluidas": 961,
+      "media": 13.121488449449723,
+      "mediana": 8.607976189999999,
+      "media_recortada_5%": 11.88931471808794,
+      "cambio_media_%": -34.104055421282254,
+      "diferencia_con_menos_sin": 6.198234317021028,
+      "IC95_dif_inf": 5.488228704173653,
+      "IC95_dif_sup": 6.908239929868403,
+      "cambio_magnitud_dif_%": -53.871992003184644,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "nombre": "Duración en productos (min)",
+      "escenario": "IQR 3",
+      "n": 11928,
+      "excluidas": 402,
+      "media": 15.772786572527712,
+      "mediana": 9.427777778333333,
+      "media_recortada_5%": 13.702576904200251,
+      "cambio_media_%": -20.789270680734585,
+      "diferencia_con_menos_sin": 8.387526029554678,
+      "IC95_dif_inf": 7.407950801974577,
+      "IC95_dif_sup": 9.367101257134781,
+      "cambio_magnitud_dif_%": -37.57901880180202,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "BounceRates",
+      "nombre": "Rebote (%)",
+      "escenario": "Completo",
+      "n": 12330,
+      "excluidas": 0,
+      "media": 2.2191380470721818,
+      "mediana": 0.31124675,
+      "media_recortada_5%": 1.355376835501892,
+      "cambio_media_%": 0.0,
+      "diferencia_con_menos_sin": -2.0200079557389485,
+      "IC95_dif_inf": -2.133636729966157,
+      "IC95_dif_sup": -1.9063791815117401,
+      "cambio_magnitud_dif_%": 0.0,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "BounceRates",
+      "nombre": "Rebote (%)",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "excluidas": 125,
+      "media": 2.0370317181810735,
+      "mediana": 0.28985510000000003,
+      "media_recortada_5%": 1.1650497060810194,
+      "cambio_media_%": -8.206173975132835,
+      "diferencia_con_menos_sin": -1.8079525417808182,
+      "IC95_dif_inf": -1.9163722255597808,
+      "IC95_dif_sup": -1.6995328580018558,
+      "cambio_magnitud_dif_%": -10.497751424971858,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "BounceRates",
+      "nombre": "Rebote (%)",
+      "escenario": "IQR 1.5",
+      "n": 10779,
+      "excluidas": 1551,
+      "media": 0.6453423641803506,
+      "mediana": 0.0,
+      "media_recortada_5%": 0.5233874784499638,
+      "cambio_media_%": -70.91923303141134,
+      "diferencia_con_menos_sin": -0.27837150218008666,
+      "IC95_dif_inf": -0.3163924615886434,
+      "IC95_dif_sup": -0.24035054277152992,
+      "cambio_magnitud_dif_%": -86.2192868404692,
+      "direccion_conservada": true
+    },
+    {
+      "variable": "BounceRates",
+      "nombre": "Rebote (%)",
+      "escenario": "IQR 3",
+      "n": 11281,
+      "excluidas": 1049,
+      "media": 0.8622031267884053,
+      "mediana": 0.1030928,
+      "media_recortada_5%": 0.6604087873042449,
+      "cambio_media_%": -61.14693594993099,
+      "diferencia_con_menos_sin": -0.48014387806432823,
+      "IC95_dif_inf": -0.528645434205715,
+      "IC95_dif_sup": -0.43164232192294155,
+      "cambio_magnitud_dif_%": -76.23059470136172,
+      "direccion_conservada": true
+    }
+  ],
+  "jackknife": [
+    {
+      "variable": "Páginas de productos",
+      "media": 31.731467964314678,
+      "SE_jackknife": 0.4005339496064019,
+      "SE_bootstrap": 0.39757421012456673,
+      "max_cambio_individual": 0.05460852721515508,
+      "max_cambio_en_SE_S1": 0.1363393222192987
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "media": 19.912436999480448,
+      "SE_jackknife": 0.28723284398325855,
+      "SE_bootstrap": 0.2877916924377081,
+      "max_cambio_individual": 0.08486600158167523,
+      "max_cambio_en_SE_S1": 0.29546064581187037
+    },
+    {
+      "variable": "Rebote (%)",
+      "media": 2.2191380470721818,
+      "SE_jackknife": 0.04366722712430998,
+      "SE_bootstrap": 0.042872891695097386,
+      "max_cambio_individual": 0.0014421982279931578,
+      "max_cambio_en_SE_S1": 0.03302701643700653
+    }
+  ],
+  "observaciones_influyentes": [
+    {
+      "variable": "ProductRelated",
+      "fila_CSV": 5154,
+      "valor": 705.0,
+      "unidad": "Páginas de productos",
+      "compra": false,
+      "cambio_media_al_omitir": -0.05460852721515508,
+      "cambio_en_SE_S1": -0.1363393222192987
+    },
+    {
+      "variable": "ProductRelated",
+      "fila_CSV": 6686,
+      "valor": 686.0,
+      "unidad": "Páginas de productos",
+      "compra": false,
+      "cambio_media_al_omitir": -0.053067445213372366,
+      "cambio_en_SE_S1": -0.1324917532347042
+    },
+    {
+      "variable": "ProductRelated",
+      "fila_CSV": 8310,
+      "valor": 584.0,
+      "unidad": "Páginas de productos",
+      "compra": false,
+      "cambio_media_al_omitir": -0.044794268151161276,
+      "cambio_en_SE_S1": -0.11183638289633194
+    },
+    {
+      "variable": "ProductRelated",
+      "fila_CSV": 10320,
+      "valor": 534.0,
+      "unidad": "Páginas de productos",
+      "compra": true,
+      "cambio_media_al_omitir": -0.04073878919909646,
+      "cambio_en_SE_S1": -0.10171120135791277
+    },
+    {
+      "variable": "ProductRelated",
+      "fila_CSV": 6789,
+      "valor": 518.0,
+      "unidad": "Páginas de productos",
+      "compra": false,
+      "cambio_media_al_omitir": -0.03944103593443771,
+      "cambio_en_SE_S1": -0.0984711432656236
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "fila_CSV": 8073,
+      "valor": 1066.2253705,
+      "unidad": "Duración en productos (min)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.08486600158167523,
+      "cambio_en_SE_S1": -0.29546064581187037
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "fila_CSV": 5154,
+      "valor": 719.5205563333333,
+      "unidad": "Duración en productos (min)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.05674492005303288,
+      "cambio_en_SE_S1": -0.19755721269932242
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "fila_CSV": 9240,
+      "valor": 499.50776616666667,
+      "unidad": "Duración en productos (min)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.03889977525891482,
+      "cambio_en_SE_S1": -0.13542941231742087
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "fila_CSV": 8786,
+      "valor": 450.16432383333336,
+      "unidad": "Duración en productos (min)",
+      "compra": true,
+      "cambio_media_al_omitir": -0.03489754942281328,
+      "cambio_en_SE_S1": -0.12149567904165823
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "fila_CSV": 8310,
+      "valor": 414.06927,
+      "unidad": "Duración en productos (min)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.03196989480091664,
+      "cambio_en_SE_S1": -0.11130306115960563
+    },
+    {
+      "variable": "BounceRates",
+      "fila_CSV": 12187,
+      "valor": 20.0,
+      "unidad": "Rebote (%)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.0014421982279931578,
+      "cambio_en_SE_S1": -0.03302701643700653
+    },
+    {
+      "variable": "BounceRates",
+      "fila_CSV": 69,
+      "valor": 20.0,
+      "unidad": "Rebote (%)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.0014421982279931578,
+      "cambio_en_SE_S1": -0.03302701643700653
+    },
+    {
+      "variable": "BounceRates",
+      "fila_CSV": 12118,
+      "valor": 20.0,
+      "unidad": "Rebote (%)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.0014421982279931578,
+      "cambio_en_SE_S1": -0.03302701643700653
+    },
+    {
+      "variable": "BounceRates",
+      "fila_CSV": 807,
+      "valor": 20.0,
+      "unidad": "Rebote (%)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.0014421982279931578,
+      "cambio_en_SE_S1": -0.03302701643700653
+    },
+    {
+      "variable": "BounceRates",
+      "fila_CSV": 5851,
+      "valor": 20.0,
+      "unidad": "Rebote (%)",
+      "compra": false,
+      "cambio_media_al_omitir": -0.0014421982279931578,
+      "cambio_en_SE_S1": -0.03302701643700653
+    }
+  ],
+  "sensibilidad_correlaciones": [
+    {
+      "x": "ProductRelated",
+      "y": "ProductRelated_Duration",
+      "escenario": "Completo",
+      "n": 12330,
+      "rho": 0.8826717951893845,
+      "cambio_rho": 1.1102230246251565e-16
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ProductRelated_Duration",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "rho": 0.8791621171306437,
+      "cambio_rho": -0.003509678058740695
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ProductRelated_Duration",
+      "escenario": "IQR conjunto 1.5",
+      "n": 11048,
+      "rho": 0.8470838177922864,
+      "cambio_rho": -0.03558797739709807
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ProductRelated_Duration",
+      "escenario": "IQR conjunto 3",
+      "n": 11778,
+      "rho": 0.8668609242619935,
+      "cambio_rho": -0.015810870927390974
+    },
+    {
+      "x": "BounceRates",
+      "y": "ExitRates",
+      "escenario": "Completo",
+      "n": 12330,
+      "rho": 0.6022763357682258,
+      "cambio_rho": 0.0
+    },
+    {
+      "x": "BounceRates",
+      "y": "ExitRates",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "rho": 0.5894054344144469,
+      "cambio_rho": -0.012870901353778885
+    },
+    {
+      "x": "BounceRates",
+      "y": "ExitRates",
+      "escenario": "IQR conjunto 1.5",
+      "n": 10747,
+      "rho": 0.40522034191615963,
+      "cambio_rho": -0.19705599385206618
+    },
+    {
+      "x": "BounceRates",
+      "y": "ExitRates",
+      "escenario": "IQR conjunto 3",
+      "n": 11268,
+      "rho": 0.4763573832712521,
+      "cambio_rho": -0.1259189524969737
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ExitRates",
+      "escenario": "Completo",
+      "n": 12330,
+      "rho": -0.5189200521932623,
+      "cambio_rho": 0.0
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ExitRates",
+      "escenario": "Sin filas idénticas",
+      "n": 12205,
+      "rho": -0.5042321234144937,
+      "cambio_rho": 0.014687928778768566
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ExitRates",
+      "escenario": "IQR conjunto 1.5",
+      "n": 10244,
+      "rho": -0.3794925121092292,
+      "cambio_rho": 0.13942754008403313
+    },
+    {
+      "x": "ProductRelated",
+      "y": "ExitRates",
+      "escenario": "IQR conjunto 3",
+      "n": 11134,
+      "rho": -0.4116888036527492,
+      "cambio_rho": 0.10723124854051314
+    }
+  ],
+  "sintesis_S3": [
+    {
+      "resultado": "Páginas de productos — media",
+      "evidencia": "IC t/percentil/BCa comparados con 10,000 remuestras; cambio de media con IQR: -31,72 %.",
+      "estado": "Incertidumbre evaluada; magnitud condicionada por las colas",
+      "recomendacion_S3": "Comunicar media e IC junto a mediana y sensibilidad; no borrar extremos sin evidencia."
+    },
+    {
+      "resultado": "Duración en productos (min) — media",
+      "evidencia": "IC t/percentil/BCa comparados con 10,000 remuestras; cambio de media con IQR: -34,10 %.",
+      "estado": "Incertidumbre evaluada; magnitud condicionada por las colas",
+      "recomendacion_S3": "Comunicar media e IC junto a mediana y sensibilidad; no borrar extremos sin evidencia."
+    },
+    {
+      "resultado": "Rebote (%) — media",
+      "evidencia": "IC t/percentil/BCa comparados con 10,000 remuestras; cambio de media con IQR: -70,92 %.",
+      "estado": "Incertidumbre evaluada; magnitud condicionada por las colas",
+      "recomendacion_S3": "Comunicar media e IC junto a mediana y sensibilidad; no borrar extremos sin evidencia."
+    },
+    {
+      "resultado": "Páginas de productos — contraste",
+      "evidencia": "p permutación=9.999e-05; Holm=0.00019998; concordancia S1=True.",
+      "estado": "Decisión concordante",
+      "recomendacion_S3": "Conservar Welch como principal y la permutación estandarizada como comprobación. Comunicar que la dirección se mantiene, pero la magnitud disminuye más de la mitad en el escenario 1,5 IQR; no interpretar la diferencia como un efecto causal."
+    },
+    {
+      "resultado": "Duración en productos (min) — contraste",
+      "evidencia": "p permutación=9.999e-05; Holm=0.00019998; concordancia S1=True.",
+      "estado": "Decisión concordante",
+      "recomendacion_S3": "Conservar Welch como principal y la permutación estandarizada como comprobación. Comunicar que la dirección se mantiene, pero la magnitud disminuye más de la mitad en el escenario 1,5 IQR; no interpretar la diferencia como un efecto causal."
+    },
+    {
+      "resultado": "Páginas de productos / Duración en productos (min)",
+      "evidencia": "IC=[0.8774, 0.8877]; rho con 1,5 IQR=0.8471; mayor cambio=0.0356.",
+      "estado": "Signo estable bajo bootstrap; Menor cambio diagnóstico entre los tres pares; no invariancia",
+      "recomendacion_S3": "Destacar la asociación páginas-duración como la de menor sensibilidad de magnitud entre estos pares y escenarios; mantener su carácter observacional y sus límites de población."
+    },
+    {
+      "resultado": "Rebote (%) / Salida (%)",
+      "evidencia": "IC=[0.5884, 0.6159]; rho con 1,5 IQR=0.4052; mayor cambio=0.1971.",
+      "estado": "Signo estable bajo bootstrap; Magnitud sensible al recorte conjunto de las variables",
+      "recomendacion_S3": "Comunicar la asociación con cautela: rho pasa de 0,602 a 0,405 con 1,5 IQR. No conservar una etiqueta fija de fuerza sin informar ese escenario; el recorte cambia las sesiones incluidas."
+    },
+    {
+      "resultado": "Páginas de productos / Salida (%)",
+      "evidencia": "IC=[-0.5331, -0.5047]; rho con 1,5 IQR=-0.3795; mayor cambio=0.1394.",
+      "estado": "Signo estable bajo bootstrap; Magnitud sensible al recorte conjunto de las variables",
+      "recomendacion_S3": "Comunicar la asociación con cautela: rho pasa de -0,519 a -0,379 con 1,5 IQR. No conservar una etiqueta fija de fuerza sin informar ese escenario; el recorte cambia las sesiones incluidas."
+    },
+    {
+      "resultado": "Compras simuladas",
+      "evidencia": "Rangos predictivos por volumen; reducción teórica de varianza fija=1.10 %; fluctuación del orden MC=True.",
+      "estado": "Coherencia interna bajo probabilidades fijas de S1",
+      "recomendacion_S3": "Interpretar oscilaciones de conversión según volumen; separar predicción condicional y MCSE. Para comparar varianzas cercanas usar la referencia analítica, no el orden de dos estimaciones Monte Carlo; no afirmar validación externa."
+    }
+  ],
+  "clasificacion_correlaciones_S3": [
+    {
+      "relacion": "Páginas de productos / Duración en productos (min)",
+      "rho_S1": 0.8826717951893844,
+      "rho_IQR_1_5": 0.8470838177922864,
+      "IC95_inf": 0.8773561143328344,
+      "IC95_sup": 0.8876920590410747,
+      "estabilidad_signo": "Signo estable bajo bootstrap",
+      "signo_conservado_en_escenarios": true,
+      "sensibilidad_magnitud": "Menor cambio diagnóstico entre los tres pares; no invariancia",
+      "mayor_cambio_diagnostico_rho": 0.03558797739709807,
+      "alcance": "Clasificación descriptiva comparativa; no umbral inferencial ni robustez universal."
+    },
+    {
+      "relacion": "Rebote (%) / Salida (%)",
+      "rho_S1": 0.6022763357682258,
+      "rho_IQR_1_5": 0.40522034191615963,
+      "IC95_inf": 0.5883769696444996,
+      "IC95_sup": 0.6158673914080993,
+      "estabilidad_signo": "Signo estable bajo bootstrap",
+      "signo_conservado_en_escenarios": true,
+      "sensibilidad_magnitud": "Magnitud sensible al recorte conjunto de las variables",
+      "mayor_cambio_diagnostico_rho": 0.19705599385206618,
+      "alcance": "Clasificación descriptiva comparativa; no umbral inferencial ni robustez universal."
+    },
+    {
+      "relacion": "Páginas de productos / Salida (%)",
+      "rho_S1": -0.5189200521932623,
+      "rho_IQR_1_5": -0.3794925121092292,
+      "IC95_inf": -0.533148843558614,
+      "IC95_sup": -0.504696900923511,
+      "estabilidad_signo": "Signo estable bajo bootstrap",
+      "signo_conservado_en_escenarios": true,
+      "sensibilidad_magnitud": "Magnitud sensible al recorte conjunto de las variables",
+      "mayor_cambio_diagnostico_rho": 0.13942754008403313,
+      "alcance": "Clasificación descriptiva comparativa; no umbral inferencial ni robustez universal."
+    }
+  ],
+  "comparacion_modelos_MC": {
+    "N_principal": 12330,
+    "varianza_teorica_aleatoria": 1612.7474452554745,
+    "varianza_teorica_fija": 1595.0566753452908,
+    "reduccion_varianza_teorica_pct": 1.0969336806099461,
+    "varianza_simulada_aleatoria": 1585.5861441244124,
+    "varianza_simulada_fija": 1589.6193162416241,
+    "orden_simulado_invertido": true
+  },
+  "comparacion_influencia_individual_conjunta": {
+    "fila_CSV_duracion_mas_influyente": 8073,
+    "max_cambio_individual_media_min": 0.08486600158167523,
+    "max_cambio_individual_media_seg": 5.091960094900514,
+    "max_cambio_individual_en_SE_S1": 0.29546064581187037,
+    "cambio_media_duracion_IQR_pct": -34.104055421282254,
+    "cambio_magnitud_diferencia_duracion_IQR_pct": -53.871992003184644
+  },
+  "interpretaciones": {
+    "bootstrap": "Los cambios absolutos de amplitud frente a t son menores al 2 % en las tres medias (máximo observado: 1,69 %). Los desplazamientos de los extremos se presentan arriba para evaluar también la posición, no solo el ancho. En esta muestra grande, la proximidad observada entre t, percentil y BCa respalda estabilidad de los intervalos de las medias frente al método de construcción. No hay evidencia en esta comparación para preferir automáticamente BCa por el solo hecho de que los datos individuales sean asimétricos. Se conserva el IC t como referencia de S1 y se presentan los dos IC bootstrap como comprobación. Esta concordancia no elimina la sensibilidad de las medias a las colas ni los supuestos de independencia y representatividad; ambos aspectos se revisan en robustez.",
+    "permutacion": "Conservamos Welch como contraste principal de S1 porque responde a diferencias de medias entre grupos independientes sin exigir igualdad de varianzas y ambos grupos son grandes. La permutación estandarizada funciona aquí como comprobación complementaria de la decisión frente a otra aproximación de la distribución nula; no se considera automáticamente superior. Las decisiones coinciden en 2 de 2 contrastes. La resolución mínima de p en esta simulación es 9.999e-05; no permite reproducir numéricamente los p paramétricos extremadamente pequeños ni implica que ambos p sean iguales. La interpretación de la permutación sigue condicionada a la intercambiabilidad para exactitud o a la aproximación asintótica de la prueba estandarizada cuando solo se supone igualdad de medias. Ninguno de los procedimientos resuelve dependencia, confusión o falta de asignación aleatoria; la conclusión es asociativa y la magnitud debe leerse junto a su sensibilidad.",
+    "MonteCarlo": "Con 100 sesiones, el intervalo predictivo central del 95 % es [9,00; 23,00] %, mientras que con 12,330 sesiones es [14,84; 16,11] %. Una tasa de conversión calculada en pocas sesiones puede fluctuar ampliamente aun manteniendo las mismas probabilidades de compra. Bajo estos supuestos, aumentar N reduce esa variación; aumentar B solo mejora la precisión con que describimos la distribución. En el caso principal, la varianza teórica de compras es 1.612,75 con composición aleatoria y 1.595,06 con composición fija: una reducción teórica de 1,10 %. En esta ejecución las varianzas estimadas por Monte Carlo quedan ligeramente en el orden contrario al teórico. Esa fluctuación de las estimaciones no demuestra que fijar la composición aumente la variabilidad: la diferencia teórica es pequeña y dos varianzas muestrales también tienen error Monte Carlo. La comprobación del margen MC de la media no garantiza igual precisión para varianzas, cuantiles o diferencias entre modelos. Para volúmenes pequeños, las cuotas enteras de composición fija pueden además modificar levemente la proporción base al redondear. Para decisiones, conviene considerar el volumen detrás de una tasa antes de interpretar una oscilación como cambio del comportamiento. No se fija un objetivo comercial sin contexto ni se extrapolan estos rangos a otras campañas, períodos o tiendas.",
+    "jackknife": "La sesión más influyente para la media de duración es la fila CSV 8073. Al omitirla, el cambio absoluto de la media es 0,085 minutos (5,09 segundos), equivalente a 0,295 errores estándar de S1. En contraste, el escenario 1,5 IQR cambia la media de duración -34,10 % y la magnitud de la diferencia entre grupos -53,87 %. La sensibilidad conjunta a las sesiones de cola no se explica solamente por una observación extraordinaria: muchas exclusiones simultáneas pueden producir cambios relevantes aunque cada omisión individual cambie poco la media. Jackknife e IQR evalúan preguntas distintas. El recorte también restringe la población analizada, por lo que no se presenta como una estimación corregida del mismo parámetro ni como justificación automática para eliminar filas."
+  },
+  "supuestos_y_limites": [
+    "Inferencia observacional; no causalidad ni generalización garantizada.",
+    "Remuestreo ordinario condicionado a independencia razonable y muestra empírica informativa.",
+    "Permutación estandarizada: exactitud bajo intercambiabilidad; aproximación para igualdad de medias heterocedástica.",
+    "Recortes IQR y medias recortadas cambian el estimando; no son limpieza confirmada.",
+    "Monte Carlo usa probabilidades fijas de S1; no propaga incertidumbre de parámetros ni valida externamente.",
+    "Percentiles de cohortes son predictivos condicionales; MCSE mide precisión del promedio simulado.",
+    "Datos sintéticos limitados a VisitorType y Revenue; no reconstruyen las 18 variables.",
+    "Other contiene 85 sesiones y requiere cautela; tamaños y multiplicadores son diseño de escenario."
+  ],
+  "tiempos_segundos": {
+    "referencia": 0.09188409999478608,
+    "bootstrap": 1.7689698000031058,
+    "permutacion": 0.5374025000201073,
+    "correlaciones": 5.970726300001843,
+    "montecarlo": 0.05611700000008568,
+    "robustez": 6.2450278000032995
+  },
+  "revision_humana_pendiente": [
+    "Interpretación y acuerdo del equipo",
+    "Reproducción en otro equipo",
+    "Informe a cargo de compañeros",
+    "Revisión y publicación en GitHub",
+    "Entrega en Canvas"
+  ]
+}
