@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "procedencia": {
+    "notebook": "S1/Definicion.ipynb",
+    "sha256_notebook": "0f268fab7a955dba257d3c800aa47c38290bd9703bbac515ca4e5caf1a1e8b86",
+    "sha256_csv": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+    "commit_notebook_S1": "5fbcaf4",
+    "descripcion": "Resultados extraídos al reproducir íntegramente el código de S1 sin modificarlo.",
+    "semilla_S1": 20261009,
+    "versiones": {
+      "ipykernel": "7.3.0",
+      "jupyterlab": "4.6.3",
+      "matplotlib": "3.11.2",
+      "notebook": "7.6.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1"
+    },
+    "sha256_notebook_LF": "0f268fab7a955dba257d3c800aa47c38290bd9703bbac515ca4e5caf1a1e8b86",
+    "sha256_csv_LF": "d8e130ba51532985f93281a73ce299e6ce150cb915769a7962a11e595eadd6a1"
+  },
+  "n": 12330,
+  "compras": 1908,
+  "p_compra": 0.15474452554744525,
+  "filas_identicas_adicionales": 125,
+  "estimaciones": [
+    {
+      "variable": "ProductRelated",
+      "n": 12330,
+      "media": 31.731467964314678,
+      "desviación_estándar": 44.47550330493652,
+      "error_estándar": 0.40053394960639827,
+      "IC95_t_inferior": 30.946358772754994,
+      "IC95_t_superior": 32.516577155874366,
+      "IC95_bootstrap_inferior": 30.917102595296026,
+      "IC95_bootstrap_superior": 32.54441808596918
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "n": 12330,
+      "media": 1194.7462199688268,
+      "desviación_estándar": 1913.6692878720035,
+      "error_estándar": 17.23397063899581,
+      "IC95_t_inferior": 1160.9649418298782,
+      "IC95_t_superior": 1228.5274981077755,
+      "IC95_bootstrap_inferior": 1161.598839304195,
+      "IC95_bootstrap_superior": 1229.9458409543977
+    },
+    {
+      "variable": "BounceRates",
+      "n": 12330,
+      "media": 0.02219138047072182,
+      "desviación_estándar": 0.048488321806260656,
+      "error_estándar": 0.00043667227124312245,
+      "IC95_t_inferior": 0.021335434516105187,
+      "IC95_t_superior": 0.023047326425338452,
+      "IC95_bootstrap_inferior": 0.021366943329036898,
+      "IC95_bootstrap_superior": 0.023078196212126922
+    }
+  ],
+  "pruebas": [
+    {
+      "variable": "ProductRelated",
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "media_con_compra": 48.2101677148847,
+      "media_sin_compra": 28.71464210324314,
+      "diferencia_con_menos_sin": 19.495525611641558,
+      "IC95_diferencia_inferior": 16.765074140990766,
+      "IC95_diferencia_superior": 22.22597708229235,
+      "t_Welch": 14.001713516383052,
+      "grados_libertad": 2260.3960164778327,
+      "p_sin_ajuste": 8.834784925440105e-43,
+      "p_Holm": 8.834784925440105e-43,
+      "decisión_Holm": "Rechazar H₀"
+    },
+    {
+      "variable": "ProductRelated_Duration",
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "media_con_compra": 1876.2096148889045,
+      "media_sin_compra": 1069.9878091544426,
+      "diferencia_con_menos_sin": 806.2218057344619,
+      "IC95_diferencia_inferior": 696.7886302162477,
+      "IC95_diferencia_superior": 915.6549812526761,
+      "t_Welch": 14.446988997552614,
+      "grados_libertad": 2350.2734541591576,
+      "p_sin_ajuste": 2.1737910437733234e-45,
+      "p_Holm": 4.347582087546647e-45,
+      "decisión_Holm": "Rechazar H₀"
+    }
+  ],
+  "correlaciones_spearman": {
+    "ProductRelated": {
+      "ProductRelated": 1.0,
+      "ProductRelated_Duration": 0.8826717951893844,
+      "BounceRates": -0.05230507163200944,
+      "ExitRates": -0.5189200521932623
+    },
+    "ProductRelated_Duration": {
+      "ProductRelated": 0.8826717951893844,
+      "ProductRelated_Duration": 1.0,
+      "BounceRates": -0.07976762269798329,
+      "ExitRates": -0.476935204673386
+    },
+    "BounceRates": {
+      "ProductRelated": -0.05230507163200944,
+      "ProductRelated_Duration": -0.07976762269798329,
+      "BounceRates": 1.0,
+      "ExitRates": 0.6022763357682258
+    },
+    "ExitRates": {
+      "ProductRelated": -0.5189200521932623,
+      "ProductRelated_Duration": -0.476935204673386,
+      "BounceRates": 0.6022763357682258,
+      "ExitRates": 1.0
+    }
+  },
+  "visitantes": [
+    {
+      "VisitorType": "New_Visitor",
+      "sesiones": 1694,
+      "compras": 422,
+      "sin_compra": 1272,
+      "porcentaje_compra": 24.911452184179456
+    },
+    {
+      "VisitorType": "Other",
+      "sesiones": 85,
+      "compras": 16,
+      "sin_compra": 69,
+      "porcentaje_compra": 18.823529411764707
+    },
+    {
+      "VisitorType": "Returning_Visitor",
+      "sesiones": 10551,
+      "compras": 1470,
+      "sin_compra": 9081,
+      "porcentaje_compra": 13.93232868922377
+    }
+  ],
+  "sensibilidad_S1": [
+    {
+      "variable": "Páginas de productos",
+      "escenario": "Todas las sesiones",
+      "n": 12330,
+      "excluidas": 0,
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "media": 31.731467964314678,
+      "mediana": 18.0,
+      "IC95_media_inferior": 30.946358772754994,
+      "IC95_media_superior": 32.516577155874366,
+      "diferencia_con_menos_sin": 19.495525611641558,
+      "IC95_diferencia_inferior": 16.765074140990766,
+      "IC95_diferencia_superior": 22.22597708229235
+    },
+    {
+      "variable": "Páginas de productos",
+      "escenario": "Dentro de 1,5 IQR",
+      "n": 11343,
+      "excluidas": 987,
+      "n_con_compra": 1623,
+      "n_sin_compra": 9720,
+      "media": 21.66649034646919,
+      "mediana": 16.0,
+      "IC95_media_inferior": 21.311594001508627,
+      "IC95_media_superior": 22.02138669142975,
+      "diferencia_con_menos_sin": 8.494031590637668,
+      "IC95_diferencia_inferior": 7.4485017421026,
+      "IC95_diferencia_superior": 9.539561439172736
+    },
+    {
+      "variable": "Páginas de productos",
+      "escenario": "Dentro de 3 IQR",
+      "n": 11917,
+      "excluidas": 413,
+      "n_con_compra": 1765,
+      "n_sin_compra": 10152,
+      "media": 25.644373583955694,
+      "mediana": 17.0,
+      "IC95_media_inferior": 25.17768832800883,
+      "IC95_media_superior": 26.111058839902558,
+      "diferencia_con_menos_sin": 11.154425424761747,
+      "IC95_diferencia_inferior": 9.72838475155143,
+      "IC95_diferencia_superior": 12.580466097972065
+    },
+    {
+      "variable": "Tiempo en productos (min)",
+      "escenario": "Todas las sesiones",
+      "n": 12330,
+      "excluidas": 0,
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "media": 19.912436999480448,
+      "mediana": 9.982281745833331,
+      "IC95_media_inferior": 19.349415697164638,
+      "IC95_media_superior": 20.47545830179626,
+      "diferencia_con_menos_sin": 13.437030095574364,
+      "IC95_diferencia_inferior": 11.613143836937462,
+      "IC95_diferencia_superior": 15.260916354211268
+    },
+    {
+      "variable": "Tiempo en productos (min)",
+      "escenario": "Dentro de 1,5 IQR",
+      "n": 11369,
+      "excluidas": 961,
+      "n_con_compra": 1619,
+      "n_sin_compra": 9750,
+      "media": 13.121488449449723,
+      "mediana": 8.607976189999999,
+      "IC95_media_inferior": 12.877928093166952,
+      "IC95_media_superior": 13.365048805732496,
+      "diferencia_con_menos_sin": 6.198234317021028,
+      "IC95_diferencia_inferior": 5.488228704173653,
+      "IC95_diferencia_superior": 6.908239929868403
+    },
+    {
+      "variable": "Tiempo en productos (min)",
+      "escenario": "Dentro de 3 IQR",
+      "n": 11928,
+      "excluidas": 402,
+      "n_con_compra": 1770,
+      "n_sin_compra": 10158,
+      "media": 15.772786572527712,
+      "mediana": 9.427777778333333,
+      "IC95_media_inferior": 15.454675322054433,
+      "IC95_media_superior": 16.090897823000994,
+      "diferencia_con_menos_sin": 8.387526029554678,
+      "IC95_diferencia_inferior": 7.407950801974577,
+      "IC95_diferencia_superior": 9.367101257134781
+    },
+    {
+      "variable": "Rebote (%)",
+      "escenario": "Todas las sesiones",
+      "n": 12330,
+      "excluidas": 0,
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "media": 2.2191380470721818,
+      "mediana": 0.31124675,
+      "IC95_media_inferior": 2.1335434516105187,
+      "IC95_media_superior": 2.3047326425338452,
+      "diferencia_con_menos_sin": -2.0200079557389485,
+      "IC95_diferencia_inferior": -2.133636729966157,
+      "IC95_diferencia_superior": -1.9063791815117401
+    },
+    {
+      "variable": "Rebote (%)",
+      "escenario": "Dentro de 1,5 IQR",
+      "n": 10779,
+      "excluidas": 1551,
+      "n_con_compra": 1883,
+      "n_sin_compra": 8896,
+      "media": 0.6453423641803506,
+      "mediana": 0.0,
+      "IC95_media_inferior": 0.627049853798032,
+      "IC95_media_superior": 0.6636348745626691,
+      "diferencia_con_menos_sin": -0.27837150218008666,
+      "IC95_diferencia_inferior": -0.3163924615886434,
+      "IC95_diferencia_superior": -0.24035054277152992
+    },
+    {
+      "variable": "Rebote (%)",
+      "escenario": "Dentro de 3 IQR",
+      "n": 11281,
+      "excluidas": 1049,
+      "n_con_compra": 1901,
+      "n_sin_compra": 9380,
+      "media": 0.8622031267884053,
+      "mediana": 0.1030928,
+      "IC95_media_inferior": 0.8365048355624608,
+      "IC95_media_superior": 0.8879014180143496,
+      "diferencia_con_menos_sin": -0.48014387806432823,
+      "IC95_diferencia_inferior": -0.528645434205715,
+      "IC95_diferencia_superior": -0.43164232192294155
+    }
+  ]
+}
