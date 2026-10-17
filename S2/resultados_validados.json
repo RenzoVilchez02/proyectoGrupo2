@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "proyecto": "Online Shoppers Purchasing Intention — Grupo 2 — Sumativa 2",
-  "generado_UTC": "2026-10-16T14:06:21.677502+00:00",
+  "generado_UTC": "2026-10-17T21:15:52.580569+00:00",
   "procedencia": {
     "S1": {
       "notebook": "S1/Definicion.ipynb",
@@ -51,6 +51,15 @@
         101,
         102
       ],
+      "bootstrap_diferencias": [
+        110,
+        111
+      ],
+      "bootstrap_medianas": [
+        120,
+        121,
+        122
+      ],
       "permutacion": [
         200,
         201
@@ -91,7 +100,7 @@
     "errores": [],
     "avisos": [],
     "python": "3.13.5",
-    "interprete": "d:\\Magister UNAB\\Curso 02 Estadística Computacional\\proyectoGrupo2\\.venv\\Scripts\\python.exe",
+    "interprete": "D:\\Magister UNAB\\Curso 02 Estadística Computacional\\proyectoGrupo2\\.venv\\Scripts\\python.exe",
     "paquetes": [
       {
         "paquete": "ipykernel",
@@ -159,6 +168,146 @@
     "Spearman": "adimensional",
     "MCSE_y_DE_tasa": "puntos porcentuales"
   },
+  "bootstrap_diferencias_medias": [
+    {
+      "variable": "Páginas de productos",
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "B": 10000,
+      "diferencia_medias": 19.495525611641558,
+      "Welch_inf": 16.765074140990766,
+      "Welch_sup": 22.22597708229235,
+      "percentil_inf": 16.78871165133263,
+      "percentil_sup": 22.245430498075553,
+      "BCa_inf": 16.89415786106006,
+      "BCa_sup": 22.39767460600043,
+      "SE_bootstrap": 1.406374088838933,
+      "z0": 0.021307952628745325,
+      "aceleracion": 0.010746005076095152
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "n_con_compra": 1908,
+      "n_sin_compra": 10422,
+      "B": 10000,
+      "diferencia_medias": 13.437030095574364,
+      "Welch_inf": 11.613143836937462,
+      "Welch_sup": 15.260916354211268,
+      "percentil_inf": 11.635167277915993,
+      "percentil_sup": 15.269898400925555,
+      "BCa_inf": 11.682698524674212,
+      "BCa_sup": 15.316891604778062,
+      "SE_bootstrap": 0.9267178059228312,
+      "z0": 0.008271967640830167,
+      "aceleracion": 0.010401621165907152
+    }
+  ],
+  "bootstrap_diferencias_medianas": [
+    {
+      "variable": "Páginas de productos",
+      "B": 10000,
+      "mediana_con_compra": 29.0,
+      "mediana_sin_compra": 16.0,
+      "diferencia_medianas": 13.0,
+      "percentil_inf": 11.0,
+      "percentil_sup": 14.0,
+      "SE_bootstrap": 0.8166921443272616
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "B": 10000,
+      "mediana_con_compra": 18.4984375,
+      "mediana_sin_compra": 8.503166666666667,
+      "diferencia_medianas": 9.995270833333333,
+      "percentil_inf": 8.643154596229166,
+      "percentil_sup": 11.130828215062497,
+      "SE_bootstrap": 0.6668580851844653
+    }
+  ],
+  "bootstrap_medianas": [
+    {
+      "variable": "Páginas de productos",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 31.731467964314678,
+      "mediana": 18.0,
+      "percentil_inf": 17.0,
+      "percentil_sup": 18.0,
+      "SE_bootstrap": 0.3048338397668256
+    },
+    {
+      "variable": "Duración en productos (min)",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 19.912436999480448,
+      "mediana": 9.982281745833331,
+      "percentil_inf": 9.716666666666667,
+      "percentil_sup": 10.329722221666666,
+      "SE_bootstrap": 0.15902685051447643
+    },
+    {
+      "variable": "Rebote (%)",
+      "n": 12330,
+      "B": 10000,
+      "media_S1": 2.2191380470721818,
+      "mediana": 0.31124675,
+      "percentil_inf": 0.2739726,
+      "percentil_sup": 0.34782609999999997,
+      "SE_bootstrap": 0.01843207144375756
+    }
+  ],
+  "seguimiento_retroalimentacion_docente": [
+    {
+      "observacion": "Bootstrap de diferencias de medias",
+      "estado": "Desarrollado en S2",
+      "ubicacion": "1.2",
+      "evidencia": "Dos variables; 10.000 remuestras por grupo; IC percentil y BCa comparados con Welch."
+    },
+    {
+      "observacion": "Bootstrap de medianas ante colas pesadas",
+      "estado": "Desarrollado en S2",
+      "ubicacion": "1.2 y 1.3",
+      "evidencia": "Tres medianas globales y dos diferencias de medianas, con IC percentil y gráficos."
+    },
+    {
+      "observacion": "Desbalance de compras",
+      "estado": "Cuantificado; tratamiento predictivo pendiente en S3",
+      "ubicacion": "6.1",
+      "evidencia": "1908 compras / 12330 sesiones: 15,47 %."
+    },
+    {
+      "observacion": "Redundancia páginas y duración",
+      "estado": "Asociación validada; comparación de modelos pendiente en S3",
+      "ubicacion": "3, 5 y 6.1",
+      "evidencia": "Spearman = 0,8827; IC95 % [0,8774; 0,8877]."
+    },
+    {
+      "observacion": "PageValues disponible antes de compra",
+      "estado": "NO confirmado; pendiente para S3",
+      "ubicacion": "5.3 y 6.1",
+      "evidencia": "El CSV no contiene marcas temporales ni demuestra disponibilidad al momento de predecir."
+    }
+  ],
+  "recomendaciones_modelamiento_S3": [
+    {
+      "tema": "Desbalance",
+      "hallazgo": "1908 compras y 10422 no compras.",
+      "accion": "Usar partición estratificada; evaluar precisión, recall, F1, PR-AUC y matriz de confusión. Si se remuestrea, hacerlo solo dentro del entrenamiento.",
+      "limite": "Predecir siempre no compra alcanza 84,53 % de accuracy y recall de compras cero; accuracy sola es insuficiente."
+    },
+    {
+      "tema": "Redundancia",
+      "hallazgo": "Páginas y duración: rho = 0,8827.",
+      "accion": "Comparar modelos con ambas variables y con cada una por separado sobre las mismas particiones de validación.",
+      "limite": "Una correlación alta no basta para eliminar automáticamente una variable; evaluar desempeño y estabilidad."
+    },
+    {
+      "tema": "Filtración de información",
+      "hallazgo": "PageValues no se utiliza en la simulación de S2; su disponibilidad previa sigue sin verificarse.",
+      "accion": "Antes de usar PageValues, documentar su cálculo y momento de disponibilidad respecto de la predicción y compra. Mantenerlo fuera del conjunto inicial de predictores hasta confirmarlo.",
+      "limite": "No confundir ausencia de PageValues en Monte Carlo con demostración de ausencia de filtración en un futuro modelo."
+    }
+  ],
   "bootstrap_medias": [
     {
       "variable": "Páginas de productos",
@@ -1235,6 +1384,36 @@
       "evidencia": "Rangos predictivos por volumen; reducción teórica de varianza fija=1.10 %; fluctuación del orden MC=True.",
       "estado": "Coherencia interna bajo probabilidades fijas de S1",
       "recomendacion_S3": "Interpretar oscilaciones de conversión según volumen; separar predicción condicional y MCSE. Para comparar varianzas cercanas usar la referencia analítica, no el orden de dos estimaciones Monte Carlo; no afirmar validación externa."
+    },
+    {
+      "resultado": "Páginas de productos — diferencia de medias bootstrap",
+      "evidencia": "BCa95 % [16,894; 22,398], comparado con Welch y percentil.",
+      "estado": "Incertidumbre de la diferencia evaluada",
+      "recomendacion_S3": "Comunicar también diferencias de medianas; los IC son individuales y la comparación es observacional."
+    },
+    {
+      "resultado": "Duración en productos (min) — diferencia de medias bootstrap",
+      "evidencia": "BCa95 % [11,683; 15,317], comparado con Welch y percentil.",
+      "estado": "Incertidumbre de la diferencia evaluada",
+      "recomendacion_S3": "Comunicar también diferencias de medianas; los IC son individuales y la comparación es observacional."
+    },
+    {
+      "resultado": "Páginas de productos — mediana",
+      "evidencia": "Mediana 18,000; IC percentil95 % [17,000; 18,000].",
+      "estado": "Referencia resistente a extremos con incertidumbre estimada",
+      "recomendacion_S3": "Informar junto a la media y evitar interpretar empates como ausencia de incertidumbre."
+    },
+    {
+      "resultado": "Duración en productos (min) — mediana",
+      "evidencia": "Mediana 9,982; IC percentil95 % [9,717; 10,330].",
+      "estado": "Referencia resistente a extremos con incertidumbre estimada",
+      "recomendacion_S3": "Informar junto a la media y evitar interpretar empates como ausencia de incertidumbre."
+    },
+    {
+      "resultado": "Rebote (%) — mediana",
+      "evidencia": "Mediana 0,311; IC percentil95 % [0,274; 0,348].",
+      "estado": "Referencia resistente a extremos con incertidumbre estimada",
+      "recomendacion_S3": "Informar junto a la media y evitar interpretar empates como ausencia de incertidumbre."
     }
   ],
   "clasificacion_correlaciones_S3": [
@@ -1294,11 +1473,15 @@
   },
   "interpretaciones": {
     "bootstrap": "Los cambios absolutos de amplitud frente a t son menores al 2 % en las tres medias (máximo observado: 1,69 %). Los desplazamientos de los extremos se presentan arriba para evaluar también la posición, no solo el ancho. En esta muestra grande, la proximidad observada entre t, percentil y BCa respalda estabilidad de los intervalos de las medias frente al método de construcción. No hay evidencia en esta comparación para preferir automáticamente BCa por el solo hecho de que los datos individuales sean asimétricos. Se conserva el IC t como referencia de S1 y se presentan los dos IC bootstrap como comprobación. Esta concordancia no elimina la sensibilidad de las medias a las colas ni los supuestos de independencia y representatividad; ambos aspectos se revisan en robustez.",
+    "bootstrap_diferencias": "Los IC bootstrap de ambas diferencias quedan por encima de cero en las dos variables. Las diferencias de medias y medianas describen parámetros distintos: una discrepancia de magnitud no es un error de cálculo. La comparación permite comunicar diferencias de navegación típica junto a diferencias del promedio, más sensible a sesiones muy largas. Los IC individuales no sustituyen los contrastes con Holm ni autorizan una interpretación causal.",
+    "bootstrap_medianas": "Las tres medianas son menores que sus medias: Páginas de productos: mediana 18,000 frente a media 31,731; Duración en productos (min): mediana 9,982 frente a media 19,912; Rebote (%): mediana 0,311 frente a media 2,219. Esto es compatible con asimetría hacia valores altos. La mediana aporta una referencia de posición más resistente a extremos, pero no reemplaza a la media cuando interesa el promedio. Ambas se comunican con sus intervalos y los escenarios de sensibilidad de la sección 5.",
     "permutacion": "Conservamos Welch como contraste principal de S1 porque responde a diferencias de medias entre grupos independientes sin exigir igualdad de varianzas y ambos grupos son grandes. La permutación estandarizada funciona aquí como comprobación complementaria de la decisión frente a otra aproximación de la distribución nula; no se considera automáticamente superior. Las decisiones coinciden en 2 de 2 contrastes. La resolución mínima de p en esta simulación es 9.999e-05; no permite reproducir numéricamente los p paramétricos extremadamente pequeños ni implica que ambos p sean iguales. La interpretación de la permutación sigue condicionada a la intercambiabilidad para exactitud o a la aproximación asintótica de la prueba estandarizada cuando solo se supone igualdad de medias. Ninguno de los procedimientos resuelve dependencia, confusión o falta de asignación aleatoria; la conclusión es asociativa y la magnitud debe leerse junto a su sensibilidad.",
     "MonteCarlo": "Con 100 sesiones, el intervalo predictivo central del 95 % es [9,00; 23,00] %, mientras que con 12,330 sesiones es [14,84; 16,11] %. Una tasa de conversión calculada en pocas sesiones puede fluctuar ampliamente aun manteniendo las mismas probabilidades de compra. Bajo estos supuestos, aumentar N reduce esa variación; aumentar B solo mejora la precisión con que describimos la distribución. En el caso principal, la varianza teórica de compras es 1.612,75 con composición aleatoria y 1.595,06 con composición fija: una reducción teórica de 1,10 %. En esta ejecución las varianzas estimadas por Monte Carlo quedan ligeramente en el orden contrario al teórico. Esa fluctuación de las estimaciones no demuestra que fijar la composición aumente la variabilidad: la diferencia teórica es pequeña y dos varianzas muestrales también tienen error Monte Carlo. La comprobación del margen MC de la media no garantiza igual precisión para varianzas, cuantiles o diferencias entre modelos. Para volúmenes pequeños, las cuotas enteras de composición fija pueden además modificar levemente la proporción base al redondear. Para decisiones, conviene considerar el volumen detrás de una tasa antes de interpretar una oscilación como cambio del comportamiento. No se fija un objetivo comercial sin contexto ni se extrapolan estos rangos a otras campañas, períodos o tiendas.",
     "jackknife": "La sesión más influyente para la media de duración es la fila CSV 8073. Al omitirla, el cambio absoluto de la media es 0,085 minutos (5,09 segundos), equivalente a 0,295 errores estándar de S1. En contraste, el escenario 1,5 IQR cambia la media de duración -34,10 % y la magnitud de la diferencia entre grupos -53,87 %. La sensibilidad conjunta a las sesiones de cola no se explica solamente por una observación extraordinaria: muchas exclusiones simultáneas pueden producir cambios relevantes aunque cada omisión individual cambie poco la media. Jackknife e IQR evalúan preguntas distintas. El recorte también restringe la población analizada, por lo que no se presenta como una estimación corregida del mismo parámetro ni como justificación automática para eliminar filas."
   },
   "supuestos_y_limites": [
+    "Medianas y diferencias de medianas: IC percentil individuales; los empates pueden producir distribuciones discretas.",
+    "PageValues: disponibilidad previa a la compra no confirmada; mantener fuera del modelo inicial de S3 hasta documentarla.",
     "Inferencia observacional; no causalidad ni generalización garantizada.",
     "Remuestreo ordinario condicionado a independencia razonable y muestra empírica informativa.",
     "Permutación estandarizada: exactitud bajo intercambiabilidad; aproximación para igualdad de medias heterocedástica.",
@@ -1309,12 +1492,14 @@
     "Other contiene 85 sesiones y requiere cautela; tamaños y multiplicadores son diseño de escenario."
   ],
   "tiempos_segundos": {
-    "referencia": 0.09188409999478608,
-    "bootstrap": 1.7689698000031058,
-    "permutacion": 0.5374025000201073,
-    "correlaciones": 5.970726300001843,
-    "montecarlo": 0.05611700000008568,
-    "robustez": 6.2450278000032995
+    "referencia": 0.10942470002919436,
+    "bootstrap": 1.5078116999939084,
+    "bootstrap_diferencias": 3.1207280000089668,
+    "bootstrap_medianas": 4.940822799981106,
+    "permutacion": 0.4525623999652453,
+    "correlaciones": 5.061891899968032,
+    "montecarlo": 0.04849730001296848,
+    "robustez": 0.30192699999315664
   },
   "revision_humana_pendiente": [
     "Interpretación y acuerdo del equipo",

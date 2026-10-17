@@ -161,7 +161,11 @@ S2/
   contraste y 10.000 remuestras emparejadas por correlación; 10.000 cohortes por escenario
   Monte Carlo. Se procesan lotes y multiplicidades para controlar memoria sin submuestrear
   el dataset. Semilla maestra: `20261015`; subsemillas por bloque documentadas en el notebook.
-- **Salida:** todas las tablas y ocho figuras permanecen en el notebook. Al terminar se
+- **Retroalimentación S1:** las secciones 1.2 y 1.3 añaden 10.000 remuestras para diferencias
+  de medias (percentil y BCa), medianas globales y diferencias de medianas (percentil).
+  La sección 6.1 documenta desbalance, redundancia y la disponibilidad previa de PageValues
+  aún no confirmada, con acciones pendientes para S3.
+- **Salida:** todas las tablas y once figuras permanecen en el notebook. Al terminar se
   genera únicamente [S2/resultados_validados.json](S2/resultados_validados.json), con las
   cifras, configuración, observaciones influyentes, limitaciones y recomendaciones para S3.
   La fecha UTC y los tiempos medidos pueden cambiar entre ejecuciones; las cifras aleatorias
