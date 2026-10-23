@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "fase": "Formativa 2",
+  "notebook": "Formativa2/Modelamiento_Predictivo.ipynb",
+  "procedencia": {
+    "CSV": "data\\raw\\online_shoppers_intention.csv",
+    "sha256_csv_LF": "d8e130ba51532985f93281a73ce299e6ce150cb915769a7962a11e595eadd6a1",
+    "S1": "S1/resultados_s1.json",
+    "sha256_S1_LF": "d4be28dbc3b99285fa7759e338d743fb1fcc8652d11c84c826ba5a4980c46570",
+    "S2": "S2/resultados_validados.json",
+    "sha256_S2_LF": "8f23078f82fdcdb3814dafe07db492f78ce3e417035258d18554b2cf34a246bc",
+    "preparacion": "data/preparacion_modelamiento.json",
+    "sha256_preparacion_LF": "541ee2406fd918c4a297a45cbdab0d4b4d1a7399fd439b6c50bbb5b8f216fd35"
+  },
+  "configuracion": {
+    "semilla_MCAR": 42,
+    "semilla_split": 42,
+    "semilla_CV": 20261022,
+    "fraccion_MCAR": 0.1,
+    "variable_MCAR": "ProductRelated_Duration",
+    "umbral": 0.5,
+    "folds": 5,
+    "predictoras_originales": [
+      "ProductRelated_Duration",
+      "ExitRates",
+      "VisitorType"
+    ],
+    "clase_positiva": "compra (Revenue=1)",
+    "class_weight": null,
+    "penalizacion": "ninguna (C=np.inf)",
+    "python": "3.13.5",
+    "versiones": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2"
+    },
+    "referencia_categorica": "Returning_Visitor",
+    "diseno": "numéricas estandarizadas; log1p(minutos) en duración"
+  },
+  "diagnostico_kernel": {
+    "correcto": true,
+    "errores": [],
+    "avisos": [],
+    "python": "3.13.5",
+    "interprete": "d:\\Magister UNAB\\Curso 02 Estadística Computacional\\proyectoGrupo2\\.venv\\Scripts\\python.exe",
+    "paquetes": [
+      {
+        "paquete": "ipykernel",
+        "instalada": "7.3.0",
+        "requerida": "7.3.0",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "jupyterlab",
+        "instalada": "4.6.3",
+        "requerida": "4.6.3",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "matplotlib",
+        "instalada": "3.11.2",
+        "requerida": "3.11.2",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "notebook",
+        "instalada": "7.6.2",
+        "requerida": "7.6.2",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "numpy",
+        "instalada": "2.5.3",
+        "requerida": "2.5.3",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "pandas",
+        "instalada": "3.0.5",
+        "requerida": "3.0.5",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "scikit-learn",
+        "instalada": "1.9.1",
+        "requerida": "1.9.1",
+        "estado": "OK",
+        "importacion": "OK"
+      },
+      {
+        "paquete": "scipy",
+        "instalada": "1.18.1",
+        "requerida": "1.18.1",
+        "estado": "OK",
+        "importacion": "OK"
+      }
+    ]
+  },
+  "particion": [
+    {
+      "conjunto": "Entrenamiento",
+      "n": 8631,
+      "compras": 1336,
+      "compras_%": 15.479087011933727,
+      "faltantes_duracion": 854
+    },
+    {
+      "conjunto": "Prueba",
+      "n": 3699,
+      "compras": 572,
+      "compras_%": 15.463638821303055,
+      "faltantes_duracion": 379
+    }
+  ],
+  "imputacion": [
+    {
+      "variable": "ProductRelated_Duration",
+      "mediana_train_seg": 595.0095238,
+      "imputados_train": 854,
+      "imputados_test": 379,
+      "estrategia": "Mediana de entrenamiento, antes de log1p(minutos)"
+    }
+  ],
+  "error_imputacion": [
+    {
+      "conjunto": "Entrenamiento",
+      "n_ocultos": 854,
+      "mediana_aplicada_min": 9.916825396666667,
+      "MAE_min": 15.963065892417251,
+      "RMSE_min": 30.495944464981772,
+      "sesgo_imputado_menos_real_min": -9.681643333250195
+    },
+    {
+      "conjunto": "Prueba",
+      "n_ocultos": 379,
+      "mediana_aplicada_min": 9.916825396666667,
+      "MAE_min": 17.91075023099384,
+      "RMSE_min": 34.87339373140773,
+      "sesgo_imputado_menos_real_min": -11.591983930756378
+    }
+  ],
+  "vif_candidatas": [
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "ProductRelated",
+      "R2_auxiliar": 0.7659338019245895,
+      "VIF": 4.272295650642491
+    },
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "ProductRelated_Duration",
+      "R2_auxiliar": 0.7279163297666036,
+      "VIF": 3.6753400126593
+    },
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "BounceRates",
+      "R2_auxiliar": 0.8453845080725395,
+      "VIF": 6.4676572026117585
+    },
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "ExitRates",
+      "R2_auxiliar": 0.8832348145014978,
+      "VIF": 8.564196560222372
+    },
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "VisitorType_New_Visitor",
+      "R2_auxiliar": 0.13511119727702792,
+      "VIF": 1.1562179980266256
+    },
+    {
+      "escenario": "Cinco variables candidatas",
+      "predictor": "VisitorType_Other",
+      "R2_auxiliar": 0.011337825346645403,
+      "VIF": 1.0114678457791921
+    }
+  ],
+  "vif_final": [
+    {
+      "escenario": "Tres variables del modelo inicial",
+      "predictor": "ProductRelated_Duration",
+      "R2_auxiliar": 0.37296147699585847,
+      "VIF": 1.5947983470122378
+    },
+    {
+      "escenario": "Tres variables del modelo inicial",
+      "predictor": "ExitRates",
+      "R2_auxiliar": 0.3863382489521273,
+      "VIF": 1.6295622112546957
+    },
+    {
+      "escenario": "Tres variables del modelo inicial",
+      "predictor": "VisitorType_New_Visitor",
+      "R2_auxiliar": 0.09339143582955967,
+      "VIF": 1.1030118614807198
+    },
+    {
+      "escenario": "Tres variables del modelo inicial",
+      "predictor": "VisitorType_Other",
+      "R2_auxiliar": 0.0069986238883236185,
+      "VIF": 1.0070479498384266
+    }
+  ],
+  "coeficientes_OR": [
+    {
+      "predictor": "ProductRelated_Duration",
+      "coeficiente": 0.4618584518865878,
+      "odds_ratio": 1.5870206475475708,
+      "contraste": "1 DE de log1p(duración en minutos)",
+      "DE_entrenamiento_transformada": 1.1917652712142146,
+      "lectura": "Mayores odds por el incremento indicado, condicionando en los demás predictores."
+    },
+    {
+      "predictor": "ExitRates",
+      "coeficiente": -1.4351487637984839,
+      "odds_ratio": 0.2380799437033542,
+      "contraste": "1 DE de salida en puntos porcentuales",
+      "DE_entrenamiento_transformada": 4.863047949872248,
+      "lectura": "Menores odds por el incremento indicado, condicionando en los demás predictores."
+    },
+    {
+      "predictor": "VisitorType_New_Visitor",
+      "coeficiente": 0.5029421566754879,
+      "odds_ratio": 1.6535792098975481,
+      "contraste": "New_Visitor frente a Returning_Visitor",
+      "DE_entrenamiento_transformada": null,
+      "lectura": "Mayores odds frente a recurrentes, condicionando en las numéricas."
+    },
+    {
+      "predictor": "VisitorType_Other",
+      "coeficiente": 0.5664271947184342,
+      "odds_ratio": 1.7619606500536333,
+      "contraste": "Other frente a Returning_Visitor",
+      "DE_entrenamiento_transformada": null,
+      "lectura": "Mayores odds frente a recurrentes, condicionando en las numéricas."
+    }
+  ],
+  "intercepto": -2.377059214540792,
+  "iteraciones_ajuste": 22,
+  "validacion_interna_folds": [
+    {
+      "fold": 1,
+      "ROC_AUC": 0.7548527922416703,
+      "PR_AP": 0.34201004489975123,
+      "accuracy": 0.8448176027793862,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0
+    },
+    {
+      "fold": 2,
+      "ROC_AUC": 0.7441747336049267,
+      "PR_AP": 0.31638442807579575,
+      "accuracy": 0.8447276940903824,
+      "precision": 0.3333333333333333,
+      "recall": 0.003745318352059925,
+      "F1": 0.007407407407407408
+    },
+    {
+      "fold": 3,
+      "ROC_AUC": 0.7270974681237212,
+      "PR_AP": 0.2828550554539583,
+      "accuracy": 0.8453070683661645,
+      "precision": 0.5,
+      "recall": 0.00749063670411985,
+      "F1": 0.014760147601476014
+    },
+    {
+      "fold": 4,
+      "ROC_AUC": 0.7425100050570782,
+      "PR_AP": 0.3221813113227142,
+      "accuracy": 0.8453070683661645,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0
+    },
+    {
+      "fold": 5,
+      "ROC_AUC": 0.7186416225776724,
+      "PR_AP": 0.2769785784851268,
+      "accuracy": 0.8435689455388181,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0
+    }
+  ],
+  "validacion_interna_resumen": [
+    {
+      "metrica": "ROC_AUC",
+      "media": 0.7374553243210137,
+      "DE_entre_folds": 0.014444832179794862
+    },
+    {
+      "metrica": "PR_AP",
+      "media": 0.30808188364746925,
+      "DE_entre_folds": 0.027489337403079423
+    },
+    {
+      "metrica": "accuracy",
+      "media": 0.844745675828183,
+      "DE_entre_folds": 0.000710723955997543
+    },
+    {
+      "metrica": "precision",
+      "media": 0.16666666666666666,
+      "DE_entre_folds": 0.23570226039551587
+    },
+    {
+      "metrica": "recall",
+      "media": 0.002247191011235955,
+      "DE_entre_folds": 0.0033499145730333927
+    },
+    {
+      "metrica": "F1",
+      "media": 0.004433511001776684,
+      "DE_entre_folds": 0.006604005275253378
+    }
+  ],
+  "medianas_seg_por_fold": [
+    589.875,
+    598.55,
+    597.25,
+    600.44833335,
+    588.0416667
+  ],
+  "metricas": [
+    {
+      "conjunto": "Entrenamiento",
+      "n": 8631,
+      "compras": 1336,
+      "accuracy": 0.8447456841617426,
+      "precision": 0.3,
+      "recall": 0.002245508982035928,
+      "F1": 0.004457652303120356,
+      "ROC_AUC": 0.7392422317804419,
+      "average_precision": 0.30713194260181476,
+      "TN": 7288,
+      "FP": 7,
+      "FN": 1333,
+      "TP": 3
+    },
+    {
+      "conjunto": "Prueba",
+      "n": 3699,
+      "compras": 572,
+      "accuracy": 0.845904298459043,
+      "precision": 0.75,
+      "recall": 0.005244755244755245,
+      "F1": 0.010416666666666666,
+      "ROC_AUC": 0.7114168610411015,
+      "average_precision": 0.2906973493472398,
+      "TN": 3126,
+      "FP": 1,
+      "FN": 569,
+      "TP": 3
+    }
+  ],
+  "baseline": [
+    {
+      "conjunto": "Entrenamiento",
+      "regla": "Siempre no compra",
+      "accuracy": 0.8452091298806628,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0,
+      "ROC_AUC_score_constante": 0.5,
+      "average_precision_score_constante": 0.15479087011933726
+    },
+    {
+      "conjunto": "Prueba",
+      "regla": "Siempre no compra",
+      "accuracy": 0.8453636117869695,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0,
+      "ROC_AUC_score_constante": 0.5,
+      "average_precision_score_constante": 0.15463638821303055
+    }
+  ],
+  "matrices_confusion": {
+    "Entrenamiento": [
+      [
+        7288,
+        7
+      ],
+      [
+        1333,
+        3
+      ]
+    ],
+    "Prueba": [
+      [
+        3126,
+        1
+      ],
+      [
+        569,
+        3
+      ]
+    ]
+  },
+  "pesos_propuestos_S3_no_aplicados": [
+    {
+      "clase": 0,
+      "n_train": 7295,
+      "peso_balanceado_para_S3": 0.5915695681973955
+    },
+    {
+      "clase": 1,
+      "n_train": 1336,
+      "peso_balanceado_para_S3": 3.2301646706586826
+    }
+  ],
+  "auditoria_coincidencias": {
+    "filas_identicas_adicionales_S1": 125,
+    "sesiones_prueba_con_perfil_predictor_igual_a_alguna_train": 311,
+    "alcance": "Coincidencias de valores agregados; no identifican usuarios ni prueban duplicación de entidad."
+  },
+  "interpretacion_desempeno": "En prueba, el modelo obtiene ROC-AUC 0,711, accuracy 84,59 %, precision 75,00 %, recall 0,52 % y F1 0,010. Identifica 3 de 572 compras, omite 569 y genera 1 falsas alarmas. El resultado corresponde a la especificación, imputación y umbral fijados; no demuestra causalidad ni utilidad comercial automática.",
+  "revision_formativa": [
+    {
+      "requisito": "Usar S1/S2 sin repetir EDA",
+      "evidencia": "Sección 1: hashes, cifras y correlaciones previas",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "MCAR 10–15 %, semilla y originales",
+      "evidencia": "Sección 2: 10 % (1.233), máscara y valores persistidos",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "70/30 estratificado e imputación simple",
+      "evidencia": "Secciones 2–3: 8.631 / 3.699; mediana de entrenamiento",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "Un logístico con 3–5 variables justificadas",
+      "evidencia": "Tres variables originales; candidatos S1/S2 y VIF explícitos",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "Odds ratios y VIF",
+      "evidencia": "Secciones 3–4: referencia y unidad de cambio indicadas",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "Matriz, métricas, ROC/AUC",
+      "evidencia": "Sección 5: train/test y referencia mayoritaria",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "Síntesis y mejoras para S3",
+      "evidencia": "Secciones 6–7 y resultados exportados",
+      "estado": "Implementado"
+    },
+    {
+      "requisito": "Reproducción por otro integrante y revisión conceptual",
+      "evidencia": "Pendiente de revisión del equipo",
+      "estado": "Pendiente humano"
+    }
+  ],
+  "pendientes_S3": [
+    {
+      "tarea": "Imputación por regresión",
+      "detalle": "3–5 predictores justificados; casos completos de train; diagnósticos y error frente a verdades ocultas."
+    },
+    {
+      "tarea": "Tres estrategias de faltantes",
+      "detalle": "Eliminación, mediana y regresión; muestra, distribución, correlaciones y desempeño en poblaciones comparables."
+    },
+    {
+      "tarea": "Tres logísticas",
+      "detalle": "Informada por S1/S2, stepwise AIC y reducida; selección/validación solo dentro de train."
+    },
+    {
+      "tarea": "Ponderación de clase",
+      "detalle": "Comparar con la base sin pesos; pesos derivados de train. Evaluar recall, precision y discriminación."
+    },
+    {
+      "tarea": "Bootstrap e intervalos",
+      "detalle": "Reajustar modelo elegido; IC95 % coeficientes y OR; comparar tradicionales y conservación de signo."
+    },
+    {
+      "tarea": "Diagnósticos ampliados",
+      "detalle": "VIF, logit, residuos, influencia y estabilidad. No eliminar filas según resultados de prueba."
+    },
+    {
+      "tarea": "Coherencia de entrega",
+      "detalle": "Notebook/informe/video deben usar la misma versión y resultados; aclarar discrepancia de sección 1.1 de S2."
+    },
+    {
+      "tarea": "Momento de predicción",
+      "detalle": "Verificar disponibilidad temporal de variables; PageValues continúa excluida."
+    }
+  ],
+  "limites": [
+    "No predicción en tiempo real demostrada; datos agregados de sesión.",
+    "S1/S2 exploraron datos completos; prueba interna no equivale a validación externa.",
+    "Independencia por usuario no verificable; coincidencias de perfiles auditadas.",
+    "Mediana reduce dispersión y no incorpora incertidumbre de imputación.",
+    "Umbral 0.5 y sin pesos: no optimizados con prueba; coeficientes aún sin intervalos.",
+    "PageValues excluida; sin interpretación causal de coeficientes ni asociaciones."
+  ]
+}

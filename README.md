@@ -181,3 +181,26 @@ S2/
   publica: no se realiza commit, push ni entrega en Canvas automáticamente.
 
 Referencia docente: [ejemplo oficial de Sumativa 2](https://github.com/jpmaidana/MCDI501-202682/tree/main/03-evaluaciones/Sumativa-2-validacion-simulacion-remuestreo).
+
+
+## Formativa 2: primer modelo de compra
+
+- **Notebook:** [Formativa2/Modelamiento_Predictivo.ipynb](Formativa2/Modelamiento_Predictivo.ipynb).
+  Usar la misma `.venv` del proyecto y ejecutar todas las celdas desde un kernel nuevo.
+  No se añaden dependencias. Incluye la comprobación inicial del kernel de S2.
+- **Faltantes artificiales:** 10 % de ProductRelated_Duration (1.233 posiciones), MCAR,
+  semilla 42. El CSV oficial permanece intacto. [data/preparacion_modelamiento.json](data/preparacion_modelamiento.json)
+  guarda una sola máscara, valores verdaderos reservados para auditoría y la partición
+  70/30 estratificada. Se reutiliza sin sobrescribir para Formativa 2 y S3.
+  No se genera un segundo CSV completo: la versión con faltantes se reconstruye exactamente.
+- **Modelo:** duración, salida y tipo de visitante; mediana, log1p(minutos), estandarización
+  y codificación aprendidas en entrenamiento mediante pipeline. VIF, odds ratios,
+  validación interna de 5 folds, métricas train/test, matrices, ROC y precision–recall.
+  PageValues se excluye. Modelo inicial sin pesos y umbral 0,5; no se optimizan con prueba.
+- **Resultados:** [Formativa2/resultados_formativa2.json](Formativa2/resultados_formativa2.json)
+  conserva configuración, cifras, diagnósticos y pendientes para S3. Las imágenes están
+  dentro del notebook; no se exportan gráficos ni modelos binarios adicionales.
+- **Alcance:** se sigue el correo y ejemplo docente de Formativa 2. Las tres logísticas,
+  imputación por regresión, ponderación y bootstrap se incorporarán después en S3.
+  No es predicción en tiempo real demostrada ni validación externa; S1/S2 exploraron
+  previamente todo el dataset. Revisión conceptual y reproducción por otro integrante pendientes.
