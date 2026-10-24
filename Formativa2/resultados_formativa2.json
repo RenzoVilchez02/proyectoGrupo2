@@ -460,47 +460,90 @@
     },
     {
       "requisito": "Síntesis y mejoras para S3",
-      "evidencia": "Secciones 6–7 y resultados exportados",
+      "evidencia": "Secciones 7.1–7.2: hallazgos, conexión S1/S2 y diez pruebas para S3",
       "estado": "Implementado"
     },
     {
       "requisito": "Reproducción por otro integrante y revisión conceptual",
-      "evidencia": "Pendiente de revisión del equipo",
-      "estado": "Pendiente humano"
+      "evidencia": "Revisión conceptual en curso; falta reproducción por otro integrante",
+      "estado": "Parcial"
     }
   ],
+  "sintesis_integrada": {
+    "conexion_S1": "Desbalance de compras; interpretar detección y falsas alarmas además de accuracy.",
+    "conexion_S2": "Sensibilidad a colas y redundancia; distinguir dirección e incertidumbre de magnitud.",
+    "compras_detectadas_prueba": 3,
+    "compras_reales_prueba": 572,
+    "recall_prueba": 0.005244755244755245,
+    "ROC_AUC_prueba": 0.7114168610411015,
+    "accuracy_prueba": 0.845904298459043,
+    "accuracy_baseline": 0.8453636117869695,
+    "MAE_imputacion_prueba_min": 17.91075023099384,
+    "RMSE_imputacion_prueba_min": 34.87339373140773,
+    "VIF_max_candidatas": 8.564196560222372,
+    "VIF_max_modelo": 1.6295622112546957,
+    "estado": "Referencia inicial sin ponderación y con umbral 0.5; mejoras aún por evaluar."
+  },
   "pendientes_S3": [
     {
+      "orden": 1,
+      "tarea": "Preparación compartida",
+      "detalle": "Reutilizar máscara MCAR y partición; preparación y ajuste solo en train.",
+      "estado": "Pendiente en S3"
+    },
+    {
+      "orden": 2,
       "tarea": "Imputación por regresión",
-      "detalle": "3–5 predictores justificados; casos completos de train; diagnósticos y error frente a verdades ocultas."
+      "detalle": "3–5 predictores de S1/S2; casos completos de train; residuos, MAE/RMSE y dispersión frente a mediana.",
+      "estado": "Pendiente en S3"
     },
     {
+      "orden": 3,
       "tarea": "Tres estrategias de faltantes",
-      "detalle": "Eliminación, mediana y regresión; muestra, distribución, correlaciones y desempeño en poblaciones comparables."
+      "detalle": "Eliminación, mediana y regresión; tamaños, correlaciones, población común y cobertura.",
+      "estado": "Pendiente en S3"
     },
     {
+      "orden": 4,
       "tarea": "Tres logísticas",
-      "detalle": "Informada por S1/S2, stepwise AIC y reducida; selección/validación solo dentro de train."
+      "detalle": "Informada por S1/S2, stepwise AIC y reducida; selección interna y comparación de parsimonia.",
+      "estado": "Pendiente en S3"
     },
     {
+      "orden": 5,
       "tarea": "Ponderación de clase",
-      "detalle": "Comparar con la base sin pesos; pesos derivados de train. Evaluar recall, precision y discriminación."
+      "detalle": "Comparar sin pesos vs balanceado con misma especificación y umbral 0.5; detección y falsas alarmas.",
+      "estado": "Pendiente en S3"
     },
     {
+      "orden": 6,
+      "tarea": "Selección del umbral",
+      "detalle": "Rejilla predefinida en validación interna de train; criterio acordado; fijar antes de evaluar prueba. Separar de ponderación.",
+      "estado": "Pendiente en S3"
+    },
+    {
+      "orden": 7,
       "tarea": "Bootstrap e intervalos",
-      "detalle": "Reajustar modelo elegido; IC95 % coeficientes y OR; comparar tradicionales y conservación de signo."
+      "detalle": "Reajustar preparación y modelo; IC95 % beta/OR tradicionales y bootstrap; conservación de signo y estabilidad de intervalos.",
+      "estado": "Pendiente en S3"
     },
     {
-      "tarea": "Diagnósticos ampliados",
-      "detalle": "VIF, logit, residuos, influencia y estabilidad. No eliminar filas según resultados de prueba."
+      "orden": 8,
+      "tarea": "Diagnósticos y sensibilidad",
+      "detalle": "VIF, logit, residuos, influencia, convergencia y colas; sin eliminar casos según prueba.",
+      "estado": "Pendiente en S3"
     },
     {
-      "tarea": "Coherencia de entrega",
-      "detalle": "Notebook/informe/video deben usar la misma versión y resultados; aclarar discrepancia de sección 1.1 de S2."
+      "orden": 9,
+      "tarea": "Impacto final de imputación",
+      "detalle": "Misma especificación final con tres tratamientos: muestra, beta, IC, AUC y métricas; poblaciones comparables.",
+      "estado": "Pendiente en S3"
     },
     {
-      "tarea": "Momento de predicción",
-      "detalle": "Verificar disponibilidad temporal de variables; PageValues continúa excluida."
+      "orden": 10,
+      "tarea": "Disponibilidad y coherencia de entrega",
+      "detalle": "PageValues fuera hasta confirmar; momento de predicción; S1/S2/S3 consistentes entre notebook, informe y video.",
+      "estado": "Pendiente en S3"
     }
   ],
   "limites": [
