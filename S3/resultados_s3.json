@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "proyecto": "Grupo 2 — Sumativa 3",
   "notebook": "S3/Modelamiento_Integrado.ipynb",
   "procedencia": {
@@ -50,6 +50,117 @@
       "BounceRates": 4.848768212500279,
       "ExitRates": 4.863047949872248
     }
+  },
+  "discusion_empresarial": {
+    "definicion_positivo": "Predicción de que la sesión termina en compra.",
+    "grupos_matriz_L2": [
+      {
+        "grupo": "Verdaderos positivos (TP)",
+        "prediccion": "Compra",
+        "resultado_real": "Compra",
+        "sesiones": 282,
+        "lectura_empresarial": "Compradores identificados; no prueba que requieran incentivos ni que el modelo cause la venta."
+      },
+      {
+        "grupo": "Falsos positivos (FP)",
+        "prediccion": "Compra",
+        "resultado_real": "Sin compra",
+        "sesiones": 670,
+        "lectura_empresarial": "Alertas sin compra; pueden consumir recursos si activan una acción. Su costo depende de esa acción."
+      },
+      {
+        "grupo": "Falsos negativos (FN)",
+        "prediccion": "Sin compra",
+        "resultado_real": "Compra",
+        "sesiones": 290,
+        "lectura_empresarial": "Compradores no identificados por el modelo. Compraron igualmente: no son ventas perdidas."
+      },
+      {
+        "grupo": "Verdaderos negativos (TN)",
+        "prediccion": "Sin compra",
+        "resultado_real": "Sin compra",
+        "sesiones": 2457,
+        "lectura_empresarial": "Sesiones sin compra clasificadas correctamente; no prueba que una intervención jamás pudiera convertirlas."
+      }
+    ],
+    "comparacion_regularizacion_umbral": [
+      {
+        "configuracion": "Referencia no penalizada, umbral de referencia",
+        "n": 3699,
+        "compras": 572,
+        "umbral": 0.2,
+        "accuracy": 0.695323060286564,
+        "precision": 0.27198027937551356,
+        "recall": 0.5786713286713286,
+        "F1": 0.37003912800447175,
+        "ROC_AUC": 0.7202872678967978,
+        "AP": 0.30834903632287086,
+        "TN": 2241,
+        "FP": 886,
+        "FN": 241,
+        "TP": 331
+      },
+      {
+        "configuracion": "L2, mismo umbral que referencia",
+        "n": 3699,
+        "compras": 572,
+        "umbral": 0.2,
+        "accuracy": 0.6980264936469316,
+        "precision": 0.2742336371168186,
+        "recall": 0.5786713286713286,
+        "F1": 0.37211916807195056,
+        "ROC_AUC": 0.7202453366908116,
+        "AP": 0.3044415650281927,
+        "TN": 2251,
+        "FP": 876,
+        "FN": 241,
+        "TP": 331
+      },
+      {
+        "configuracion": "Mismo L2, umbral elegido internamente",
+        "n": 3699,
+        "compras": 572,
+        "umbral": 0.225,
+        "accuracy": 0.740470397404704,
+        "precision": 0.296218487394958,
+        "recall": 0.493006993006993,
+        "F1": 0.3700787401574803,
+        "ROC_AUC": 0.7202453366908116,
+        "AP": 0.3044415650281927,
+        "TN": 2457,
+        "FP": 670,
+        "FN": 290,
+        "TP": 282
+      }
+    ],
+    "cambio_regularizacion_mismo_umbral": {
+      "FP": -10,
+      "TP": 0
+    },
+    "cambio_umbral_mismo_L2": {
+      "FP": -206,
+      "TP": -49
+    },
+    "interpretacion_umbral": "Con umbral común 0,200, pasar de referencia a L2 cambia FP en -10 y TP en 0. Manteniendo el mismo L2 y pasando al umbral 0,225, FP cambian en -206 y TP en -49. Son contrastes descriptivos de configuraciones fijas, no efectos causales ni una atribución de rentabilidad.",
+    "recomendacion": "Conservar ambos modelos con funciones explícitas: la referencia no penalizada para interpretación estadística condicionada y el L2 como alternativa operativa más conservadora. No se declara un ganador universal o económico. El L2 obtiene recall de prueba 49,30 % y precision 29,62 %; la reducción de alertas debe evaluarse junto a compras no identificadas y la variación entre folds. El mínimo de 50 % se cumplió en validación interna agregada, pero no en prueba en esta ejecución. Antes de escoger una política comercial se requieren costos de acción, beneficios, disponibilidad temporal y validación adicional. PageValues permanece excluida.",
+    "escenarios": [
+      {
+        "accion": "Atención comercial costosa",
+        "prioridad_posible": "Precision y control de falsas alarmas.",
+        "alcance": "Hipótesis ilustrativa sin costos observados; no decisión de rentabilidad."
+      },
+      {
+        "accion": "Recomendación automática de costo bajo",
+        "prioridad_posible": "Recall, aceptando más falsas alarmas.",
+        "alcance": "Hipótesis ilustrativa; no prueba beneficio incremental de la recomendación."
+      }
+    ],
+    "limites": [
+      "FN no significa venta perdida: son compras observadas.",
+      "TP no significa venta causada por el modelo o por un incentivo.",
+      "Los IC de coeficientes no penalizados no son IC de coeficientes L2.",
+      "No se conoce utilidad económica ni beneficio causal de intervenir."
+    ]
   },
   "grid_search": {
     "objetivo": "Minimizar FP OOF sujeto a recall >= 0.50; empates por recall, F1, C, peso cercano a 1 y umbral.",
@@ -24068,6 +24179,11 @@
       "tema": "Robustez y cierre del L2",
       "decision": "Se mantienen parámetros fijos: variación por fold e IC de desempeño/diferencias pareadas; conclusión operativa explícita.",
       "ubicacion": "5.2 estabilidad interna; 6.2 incertidumbre y alcance; 10 conclusión."
+    },
+    {
+      "tema": "Interpretación empresarial",
+      "decision": "Referencia inferencial y alternativa L2 con funciones distintas; costos de FP/FN y separación de regularización/umbral.",
+      "ubicacion": "10.1 discusión y tablas para el informe; resultados JSON con la misma evidencia."
     }
   ],
   "diagnosticos_imputacion_ambas_escalas": [
@@ -52088,6 +52204,117 @@
     "ponderacion": "Sin pesos",
     "pesos_clase": null,
     "umbral": 0.2,
+    "discusion_empresarial": {
+      "definicion_positivo": "Predicción de que la sesión termina en compra.",
+      "grupos_matriz_L2": [
+        {
+          "grupo": "Verdaderos positivos (TP)",
+          "prediccion": "Compra",
+          "resultado_real": "Compra",
+          "sesiones": 282,
+          "lectura_empresarial": "Compradores identificados; no prueba que requieran incentivos ni que el modelo cause la venta."
+        },
+        {
+          "grupo": "Falsos positivos (FP)",
+          "prediccion": "Compra",
+          "resultado_real": "Sin compra",
+          "sesiones": 670,
+          "lectura_empresarial": "Alertas sin compra; pueden consumir recursos si activan una acción. Su costo depende de esa acción."
+        },
+        {
+          "grupo": "Falsos negativos (FN)",
+          "prediccion": "Sin compra",
+          "resultado_real": "Compra",
+          "sesiones": 290,
+          "lectura_empresarial": "Compradores no identificados por el modelo. Compraron igualmente: no son ventas perdidas."
+        },
+        {
+          "grupo": "Verdaderos negativos (TN)",
+          "prediccion": "Sin compra",
+          "resultado_real": "Sin compra",
+          "sesiones": 2457,
+          "lectura_empresarial": "Sesiones sin compra clasificadas correctamente; no prueba que una intervención jamás pudiera convertirlas."
+        }
+      ],
+      "comparacion_regularizacion_umbral": [
+        {
+          "configuracion": "Referencia no penalizada, umbral de referencia",
+          "n": 3699,
+          "compras": 572,
+          "umbral": 0.2,
+          "accuracy": 0.695323060286564,
+          "precision": 0.27198027937551356,
+          "recall": 0.5786713286713286,
+          "F1": 0.37003912800447175,
+          "ROC_AUC": 0.7202872678967978,
+          "AP": 0.30834903632287086,
+          "TN": 2241,
+          "FP": 886,
+          "FN": 241,
+          "TP": 331
+        },
+        {
+          "configuracion": "L2, mismo umbral que referencia",
+          "n": 3699,
+          "compras": 572,
+          "umbral": 0.2,
+          "accuracy": 0.6980264936469316,
+          "precision": 0.2742336371168186,
+          "recall": 0.5786713286713286,
+          "F1": 0.37211916807195056,
+          "ROC_AUC": 0.7202453366908116,
+          "AP": 0.3044415650281927,
+          "TN": 2251,
+          "FP": 876,
+          "FN": 241,
+          "TP": 331
+        },
+        {
+          "configuracion": "Mismo L2, umbral elegido internamente",
+          "n": 3699,
+          "compras": 572,
+          "umbral": 0.225,
+          "accuracy": 0.740470397404704,
+          "precision": 0.296218487394958,
+          "recall": 0.493006993006993,
+          "F1": 0.3700787401574803,
+          "ROC_AUC": 0.7202453366908116,
+          "AP": 0.3044415650281927,
+          "TN": 2457,
+          "FP": 670,
+          "FN": 290,
+          "TP": 282
+        }
+      ],
+      "cambio_regularizacion_mismo_umbral": {
+        "FP": -10,
+        "TP": 0
+      },
+      "cambio_umbral_mismo_L2": {
+        "FP": -206,
+        "TP": -49
+      },
+      "interpretacion_umbral": "Con umbral común 0,200, pasar de referencia a L2 cambia FP en -10 y TP en 0. Manteniendo el mismo L2 y pasando al umbral 0,225, FP cambian en -206 y TP en -49. Son contrastes descriptivos de configuraciones fijas, no efectos causales ni una atribución de rentabilidad.",
+      "recomendacion": "Conservar ambos modelos con funciones explícitas: la referencia no penalizada para interpretación estadística condicionada y el L2 como alternativa operativa más conservadora. No se declara un ganador universal o económico. El L2 obtiene recall de prueba 49,30 % y precision 29,62 %; la reducción de alertas debe evaluarse junto a compras no identificadas y la variación entre folds. El mínimo de 50 % se cumplió en validación interna agregada, pero no en prueba en esta ejecución. Antes de escoger una política comercial se requieren costos de acción, beneficios, disponibilidad temporal y validación adicional. PageValues permanece excluida.",
+      "escenarios": [
+        {
+          "accion": "Atención comercial costosa",
+          "prioridad_posible": "Precision y control de falsas alarmas.",
+          "alcance": "Hipótesis ilustrativa sin costos observados; no decisión de rentabilidad."
+        },
+        {
+          "accion": "Recomendación automática de costo bajo",
+          "prioridad_posible": "Recall, aceptando más falsas alarmas.",
+          "alcance": "Hipótesis ilustrativa; no prueba beneficio incremental de la recomendación."
+        }
+      ],
+      "limites": [
+        "FN no significa venta perdida: son compras observadas.",
+        "TP no significa venta causada por el modelo o por un incentivo.",
+        "Los IC de coeficientes no penalizados no son IC de coeficientes L2.",
+        "No se conoce utilidad económica ni beneficio causal de intervenir."
+      ]
+    },
     "criterios": "Imputación por MAE interno; modelo por AP media y regla 1SE de parsimonia; forma y pesos por la misma regla; umbral por F1 OOF.",
     "desempeno_prueba": {
       "accuracy": 0.695323060286564,

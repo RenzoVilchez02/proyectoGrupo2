@@ -228,6 +228,10 @@ Referencia docente: [ejemplo oficial de Sumativa 2](https://github.com/jpmaidana
   remuestras pareadas de prueba con modelos fijos. IC del desempeño y diferencias L2−referencia;
   separados del bootstrap de coeficientes. Se comunica el costo en compras omitidas y el
   recall de prueba inferior al 50 %, sin volver a ajustar parámetros usando ese conjunto.
+- **Discusión empresarial (10.1):** interpretación de TP/FP/FN/TN, prioridades según costo
+  de la acción y distinción entre referencia inferencial y alternativa L2. Contraste controlado
+  de regularización y umbral; FN no implica una venta perdida y TP no implica una venta
+  causada por el modelo. Sin costos ni validación causal no se declara rentabilidad superior.
 - **Guía de revisión:** sección 10 resume cambios, decisiones y ubicación de la evidencia.
   La mejora de imputación no garantiza mejorar todas las métricas de clasificación.
 - **Salida:** [S3/resultados_s3.json](S3/resultados_s3.json), generado por el notebook para
