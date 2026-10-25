@@ -204,3 +204,46 @@ Referencia docente: [ejemplo oficial de Sumativa 2](https://github.com/jpmaidana
   imputación por regresión, ponderación y bootstrap se incorporarán después en S3.
   No es predicción en tiempo real demostrada ni validación externa; S1/S2 exploraron
   previamente todo el dataset. Revisión conceptual y reproducción por otro integrante pendientes.
+
+
+## Sumativa 3: modelamiento integrado
+
+- **Notebook maestro:** [S3/Modelamiento_Integrado.ipynb](S3/Modelamiento_Integrado.ipynb).
+  Usar la misma `.venv` de Curso 02. Se añade `statsmodels==0.15.0`: instalar una vez
+  con `.\.venv\Scripts\python.exe -m pip install -r requirements.txt` en otro equipo.
+- **Preparación:** reutiliza [data/preparacion_modelamiento.json](data/preparacion_modelamiento.json)
+  sin regenerar MCAR ni partición. Raw, S1, S2 y Formativa 2 se conservan.
+- **Imputación (secciones 2–3):** compara mediana, OLS en minutos y OLS log1p con
+  corrección smearing, tres predictores y límite explícito cero. Selección por MAE interno;
+  auditoría de negativos antes/después del límite, distribución/correlaciones e IC HC3.
+- **Modelos (4–7):** informada, stepwise AIC y reducida BIC; comparación interna de forma
+  lineal/cuadrática y pesos. Regla 1SE orientativa de parsimonia y umbral por F1 OOF.
+  Matrices/ROC, VIF/logit/influencia y tabla ejecutiva que separa pesos de umbral.
+- **Grid search (5.1/6.1):** 27 combinaciones refinadas de umbral (0,20/0,225/0,25), peso relativo
+  de compra (0,75/1/1,25; sin compra=1) y C (0,01/0,03/0,1, L2). Minimiza FP OOF con recall mínimo
+  de 50 %. 45 ajustes internos; tres matrices 3×3, ganador explícito y evaluación separada
+  en prueba frente a referencia. La elección está condicionada a la especificación de train;
+  el L2 no hereda los IC del modelo no penalizado. PageValues sigue excluida.
+- **Cierre de robustez (5.2/6.2/10):** estabilidad del ganador en los cinco folds y 2.000
+  remuestras pareadas de prueba con modelos fijos. IC del desempeño y diferencias L2−referencia;
+  separados del bootstrap de coeficientes. Se comunica el costo en compras omitidas y el
+  recall de prueba inferior al 50 %, sin volver a ajustar parámetros usando ese conjunto.
+- **Discusión empresarial (10.1):** interpretación de TP/FP/FN/TN, prioridades según costo
+  de la acción y distinción entre referencia inferencial y alternativa L2. Contraste controlado
+  de regularización y umbral; FN no implica una venta perdida y TP no implica una venta
+  causada por el modelo. Sin costos ni validación causal no se declara rentabilidad superior.
+- **Guía de revisión:** sección 10 resume cambios, decisiones y ubicación de la evidencia.
+  La mejora de imputación no garantiza mejorar todas las métricas de clasificación.
+- **Salida:** [S3/resultados_s3.json](S3/resultados_s3.json), generado por el notebook para
+  informe y presentación. Gráficos integrados en ipynb; no se crean PDFs ni videos.
+- **Decisiones:** se toman con entrenamiento. El holdout ya fue explorado en fases anteriores;
+  no se presenta como validación externa. PageValues excluida. No se garantiza causalidad,
+  independencia por usuario, calibración de scores ponderados ni disponibilidad en tiempo real.
+- **Bootstrap:** 1.000 reajustes con preparación y escala, convertidos a escala común; IC
+  percentil95 %, comparación Wald, estabilidad de signo y convergencia de extremos.
+  Incertidumbre condicional a especificación seleccionada, no imputación múltiple. Un análisis
+  separado de 100 remuestras repite stepwise y presenta frecuencias de inclusión; no convierte
+  los IC condicionales en intervalos corregidos por selección. El intercepto no se rotula como OR.
+- **Pendiente del equipo:** revisar interpretación, reproducir, redactar informe PDF máximo
+  10 páginas, preparar presentación de 10 minutos y entregar en Canvas. El notebook no
+  realiza commit, push ni entrega automáticamente.
