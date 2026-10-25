@@ -232,6 +232,10 @@ Referencia docente: [ejemplo oficial de Sumativa 2](https://github.com/jpmaidana
   de la acción y distinción entre referencia inferencial y alternativa L2. Contraste controlado
   de regularización y umbral; FN no implica una venta perdida y TP no implica una venta
   causada por el modelo. Sin costos ni validación causal no se declara rentabilidad superior.
+- **Retroalimentación de Formativa 2 (25 de octubre):** 3.1 audita redundancia de tasas del
+  imputador con error interno y VIF; 4 completa los tres resúmenes con SE/z/p/IC y tasas
+  retenidas; 6.3 compara explícitamente F2, referencia S3, pesos balanceados y alternativa L2.
+  La respuesta docente se resume en 10; 10.2 conserva una lista manual de entrega en Canvas.
 - **Guía de revisión:** sección 10 resume cambios, decisiones y ubicación de la evidencia.
   La mejora de imputación no garantiza mejorar todas las métricas de clasificación.
 - **Salida:** [S3/resultados_s3.json](S3/resultados_s3.json), generado por el notebook para
