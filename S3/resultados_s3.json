@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "proyecto": "Grupo 2 — Sumativa 3",
   "notebook": "S3/Modelamiento_Integrado.ipynb",
   "procedencia": {
@@ -51,6 +51,365 @@
       "ExitRates": 4.863047949872248
     }
   },
+  "respuesta_docente": [
+    {
+      "observacion": "Conservar MCAR y partición estratificada",
+      "respuesta": "Mismos 1.233 valores ocultados y mismos índices train/test. Valores originales solo para auditoría.",
+      "ubicacion": "1–3 y protocolo data/preparacion_modelamiento.json"
+    },
+    {
+      "observacion": "Comparar eliminación, mediana y regresión",
+      "respuesta": "Errores en valores conocidos/ocultados, cobertura, distribución, correlaciones e impacto en modelo final.",
+      "ubicacion": "2–3 y 9"
+    },
+    {
+      "observacion": "Tres logísticas con resumen, p e IC",
+      "respuesta": "N, log-verosimilitud, deviance, AIC/BIC, convergencia; beta, SE, z, p, IC y OR. Alcance exploratorio postselección.",
+      "ubicacion": "4"
+    },
+    {
+      "observacion": "Rebote y salida: revisar VIF y conservar una tasa en el clasificador final",
+      "respuesta": "Se muestran tasas retenidas y VIF de cada logístico. El imputador se audita por separado, incluida la limitación que persiste.",
+      "ubicacion": "3.1 y 4"
+    },
+    {
+      "observacion": "Ponderar compras (~3,23) y comparar con recall/AUC iniciales",
+      "respuesta": "Pesos balanceados calculados solo en train y comparación a umbral común; referencia de Formativa 2 recuperada de JSON.",
+      "ubicacion": "5–6 y 6.3"
+    },
+    {
+      "observacion": "Bootstrap de coeficientes del mejor modelo",
+      "respuesta": "1.000 reajustes del modelo de referencia. IC separados de la alternativa L2 y del bootstrap de métricas.",
+      "ubicacion": "8; 6.2 tiene otro objetivo"
+    },
+    {
+      "observacion": "Adjuntar ipynb y demás productos en Canvas; reiniciar kernel",
+      "respuesta": "Lista manual de entrega con todas las casillas pendientes hasta la comprobación final del equipo.",
+      "ubicacion": "10.2"
+    }
+  ],
+  "auditoria_redundancia_imputador": {
+    "errores_por_fold": [
+      {
+        "diseno": "Tres predictores (vigente)",
+        "fold": 1,
+        "n_evaluados": 173,
+        "MAE_min": 7.957139803654161,
+        "RMSE_min": 15.305001245408272,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "fold": 2,
+        "n_evaluados": 165,
+        "MAE_min": 9.533102657309952,
+        "RMSE_min": 17.19430691793621,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "fold": 3,
+        "n_evaluados": 157,
+        "MAE_min": 7.572902853561924,
+        "RMSE_min": 13.234277915133077,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "fold": 4,
+        "n_evaluados": 180,
+        "MAE_min": 7.255244769230949,
+        "RMSE_min": 11.587393568150882,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "fold": 5,
+        "n_evaluados": 179,
+        "MAE_min": 8.468505394628592,
+        "RMSE_min": 14.938764108692567,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "fold": 1,
+        "n_evaluados": 173,
+        "MAE_min": 7.943993826869687,
+        "RMSE_min": 15.247801264760808,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "fold": 2,
+        "n_evaluados": 165,
+        "MAE_min": 9.538729114057913,
+        "RMSE_min": 17.24515471656107,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "fold": 3,
+        "n_evaluados": 157,
+        "MAE_min": 7.587096567307756,
+        "RMSE_min": 13.26403160412451,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "fold": 4,
+        "n_evaluados": 180,
+        "MAE_min": 7.31063695189601,
+        "RMSE_min": 11.666459445222065,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "fold": 5,
+        "n_evaluados": 179,
+        "MAE_min": 8.48183449770727,
+        "RMSE_min": 15.010652933979205,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "fold": 1,
+        "n_evaluados": 173,
+        "MAE_min": 7.990524814823613,
+        "RMSE_min": 15.423659356824798,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "fold": 2,
+        "n_evaluados": 165,
+        "MAE_min": 9.57026939246685,
+        "RMSE_min": 17.21319835227333,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "fold": 3,
+        "n_evaluados": 157,
+        "MAE_min": 7.5661120797274455,
+        "RMSE_min": 13.220147199406213,
+        "negativos_antes_limite": 1
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "fold": 4,
+        "n_evaluados": 180,
+        "MAE_min": 7.230761250493734,
+        "RMSE_min": 11.571414552553838,
+        "negativos_antes_limite": 0
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "fold": 5,
+        "n_evaluados": 179,
+        "MAE_min": 8.449528003468673,
+        "RMSE_min": 14.857478124873351,
+        "negativos_antes_limite": 1
+      }
+    ],
+    "resumen": [
+      {
+        "diseno": "Tres predictores (vigente)",
+        "MAE_min": 8.157379095677115,
+        "RMSE_min": 14.451948751064203,
+        "n_evaluados": 854,
+        "negativos_antes_limite": 3,
+        "VIF_max": 7.76531498818814,
+        "cambio_MAE_frente_vigente": 0.0,
+        "cambio_MAE_pct": 0.0
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "MAE_min": 8.172458191567728,
+        "RMSE_min": 14.486819992929531,
+        "n_evaluados": 854,
+        "negativos_antes_limite": 3,
+        "VIF_max": 1.626865906793492,
+        "cambio_MAE_frente_vigente": 0.015079095890612848,
+        "cambio_MAE_pct": 0.18485221434178287
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "MAE_min": 8.161439108196063,
+        "RMSE_min": 14.457179517186308,
+        "n_evaluados": 854,
+        "negativos_antes_limite": 3,
+        "VIF_max": 1.3006308641712112,
+        "cambio_MAE_frente_vigente": 0.004060012518948497,
+        "cambio_MAE_pct": 0.04977104130296019
+      }
+    ],
+    "VIF": [
+      {
+        "diseno": "Tres predictores (vigente)",
+        "predictor": "log1p_paginas",
+        "VIF": 1.7424966685715109
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "predictor": "rebote_pp",
+        "VIF": 6.2081381762773775
+      },
+      {
+        "diseno": "Tres predictores (vigente)",
+        "predictor": "salida_pp",
+        "VIF": 7.76531498818814
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "predictor": "log1p_paginas",
+        "VIF": 1.626865906793492
+      },
+      {
+        "diseno": "Sin rebote (control de dos predictores)",
+        "predictor": "salida_pp",
+        "VIF": 1.6268659067934916
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "predictor": "log1p_paginas",
+        "VIF": 1.3006308641712112
+      },
+      {
+        "diseno": "Sin salida (control de dos predictores)",
+        "predictor": "rebote_pp",
+        "VIF": 1.3006308641712105
+      }
+    ],
+    "interpretacion": "Sin rebote, VIF máximo 1,63 frente a 7,77 y MAE 8,172 frente a 8,157 min; cambio relativo 0,18 %. La diferencia de error es descriptiva, no una prueba de superioridad. El imputador vigente conserva tres predictores; su pequeña ventaja de error no demuestra que las dos tasas sean necesarias. La alternativa simplificada reduce colinealidad y merece consideración metodológica, pero aquí se documenta como control sin rehacer la selección ni trasladar IC entre diseños. No interpretar cada tasa como efecto independiente estable.",
+    "cambio_modelo_principal": false
+  },
+  "tasas_retenidas_y_VIF_clasificadores": [
+    {
+      "modelo": "M1_informado",
+      "tasas_retenidas": "ExitRates",
+      "retiene_ambas_tasas": false,
+      "VIF_max": 1.7523481402493493
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "tasas_retenidas": "ExitRates",
+      "retiene_ambas_tasas": false,
+      "VIF_max": 5.837196385335675
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "tasas_retenidas": "ExitRates",
+      "retiene_ambas_tasas": false,
+      "VIF_max": 1.7523481402493493
+    }
+  ],
+  "comparacion_formativa2_S3": [
+    {
+      "configuracion": "Formativa 2: mediana, sin pesos, umbral 0,5",
+      "preparacion": "Mediana",
+      "ponderacion": "Sin pesos",
+      "umbral": 0.5,
+      "n": 3699,
+      "compras": 572,
+      "TP": 3,
+      "FP": 1,
+      "FN": 569,
+      "TN": 3126,
+      "accuracy": 0.845904298459043,
+      "precision": 0.75,
+      "recall": 0.005244755244755245,
+      "F1": 0.010416666666666666,
+      "ROC_AUC": 0.7114168610411015,
+      "AP": 0.2906973493472398
+    },
+    {
+      "configuracion": "S3: sin pesos, umbral 0,5",
+      "preparacion": "Regresión",
+      "ponderacion": "Sin pesos",
+      "umbral": 0.5,
+      "n": 3699,
+      "compras": 572,
+      "TP": 3,
+      "FP": 0,
+      "FN": 569,
+      "TN": 3127,
+      "accuracy": 0.8461746417950797,
+      "precision": 1.0,
+      "recall": 0.005244755244755245,
+      "F1": 0.010434782608695653,
+      "ROC_AUC": 0.7202872678967978,
+      "AP": 0.30834903632287086
+    },
+    {
+      "configuracion": "S3: balanceado, umbral 0,5",
+      "preparacion": "Regresión",
+      "ponderacion": "Balanceado",
+      "umbral": 0.5,
+      "n": 3699,
+      "compras": 572,
+      "TP": 420,
+      "FP": 1335,
+      "FN": 152,
+      "TN": 1792,
+      "accuracy": 0.5979994593133279,
+      "precision": 0.23931623931623933,
+      "recall": 0.7342657342657343,
+      "F1": 0.36097980232058446,
+      "ROC_AUC": 0.7204002026115872,
+      "AP": 0.3087921802050071
+    },
+    {
+      "configuracion": "S3: referencia al umbral elegido por F1",
+      "preparacion": "Regresión",
+      "ponderacion": "Sin pesos",
+      "umbral": 0.2,
+      "n": 3699,
+      "compras": 572,
+      "TP": 331,
+      "FP": 886,
+      "FN": 241,
+      "TN": 2241,
+      "accuracy": 0.695323060286564,
+      "precision": 0.27198027937551356,
+      "recall": 0.5786713286713286,
+      "F1": 0.37003912800447175,
+      "ROC_AUC": 0.7202872678967978,
+      "AP": 0.30834903632287086
+    },
+    {
+      "configuracion": "S3: alternativa L2, objetivo FP con recall mínimo",
+      "preparacion": "Regresión",
+      "ponderacion": "Peso relativo compra 1,000",
+      "umbral": 0.225,
+      "n": 3699,
+      "compras": 572,
+      "TP": 282,
+      "FP": 670,
+      "FN": 290,
+      "TN": 2457,
+      "accuracy": 0.740470397404704,
+      "precision": 0.296218487394958,
+      "recall": 0.493006993006993,
+      "F1": 0.3700787401574803,
+      "ROC_AUC": 0.7202453366908116,
+      "AP": 0.3044415650281927
+    }
+  ],
+  "pesos_balanceados_docente": [
+    {
+      "clase": "Sin compra",
+      "n_train": 7295,
+      "peso_balanceado": 0.5915695681973955,
+      "peso_relativo_frente_no_compra": 1.0
+    },
+    {
+      "clase": "Compra",
+      "n_train": 1336,
+      "peso_balanceado": 3.2301646706586826,
+      "peso_relativo_frente_no_compra": 5.460329341317365
+    }
+  ],
+  "interpretacion_comparacion_formativa2_S3": "La ponderación fue aplicada y comparada explícitamente: a umbral 0,5, el balanceado obtiene recall 73,43 % y 1335 falsas alarmas, frente a 0,52 % de recall en Formativa 2. No se atribuye todo ese cambio a pesos: la tabla incluye la referencia S3 sin pesos para separar el contraste. La opción L2 conserva pesos iguales según el objetivo interno declarado; no se oculta el resultado balanceado ni se lo presenta como ganador automático. Una precision alta calculada sobre muy pocas alertas al umbral 0,5 no demuestra utilidad: revisar TP, FP y recall.",
   "discusion_empresarial": {
     "definicion_positivo": "Predicción de que la sesión termina en compra.",
     "grupos_matriz_L2": [
@@ -24184,6 +24543,11 @@
       "tema": "Interpretación empresarial",
       "decision": "Referencia inferencial y alternativa L2 con funciones distintas; costos de FP/FN y separación de regularización/umbral.",
       "ubicacion": "10.1 discusión y tablas para el informe; resultados JSON con la misma evidencia."
+    },
+    {
+      "tema": "Retroalimentación docente de Formativa 2",
+      "decision": "Valores p y resúmenes completos, redundancia del imputador, tasas del clasificador, pesos y comparación F2→S3.",
+      "ubicacion": "3.1, 4, 6.3 y respuesta de 10; lista final de entrega en 10.2."
     }
   ],
   "diagnosticos_imputacion_ambas_escalas": [
@@ -24768,6 +25132,12 @@
       "modelo": "M1_informado",
       "grupos": "ProductRelated_Duration, ExitRates, VisitorType",
       "parametros_incl_const": 5,
+      "n_train": 8631,
+      "compras_train": 1336,
+      "log_verosimilitud": -3287.931215770109,
+      "deviance": 6575.862431540218,
+      "convergio": true,
+      "iteraciones": 7,
       "AIC_sin_pesos": 6585.862431540218,
       "BIC_sin_pesos": 6621.178009801316
     },
@@ -24775,6 +25145,12 @@
       "modelo": "M2_stepwise_AIC",
       "grupos": "ProductRelated, ProductRelated_Duration, ExitRates, VisitorType",
       "parametros_incl_const": 6,
+      "n_train": 8631,
+      "compras_train": 1336,
+      "log_verosimilitud": -3286.4564580578567,
+      "deviance": 6572.912916115713,
+      "convergio": true,
+      "iteraciones": 7,
       "AIC_sin_pesos": 6584.912916115713,
       "BIC_sin_pesos": 6627.291610029031
     },
@@ -24782,6 +25158,12 @@
       "modelo": "M3_reducido_BIC",
       "grupos": "ProductRelated_Duration, ExitRates, VisitorType",
       "parametros_incl_const": 5,
+      "n_train": 8631,
+      "compras_train": 1336,
+      "log_verosimilitud": -3287.931215770109,
+      "deviance": 6575.862431540218,
+      "convergio": true,
+      "iteraciones": 7,
       "AIC_sin_pesos": 6585.862431540218,
       "BIC_sin_pesos": 6621.178009801316
     }
@@ -24791,6 +25173,9 @@
       "modelo": "M1_informado",
       "predictor": "const",
       "coef": -2.378773056464126,
+      "error_estandar": 0.056861515507709744,
+      "z": -41.834499753028794,
+      "p": 0.0,
       "IC95_inf": -2.4902195789656028,
       "IC95_sup": -2.2673265339626494,
       "OR": null,
@@ -24801,6 +25186,9 @@
       "modelo": "M1_informado",
       "predictor": "ProductRelated_Duration",
       "coef": 0.4738757361372077,
+      "error_estandar": 0.04116616425054091,
+      "z": 11.51129197399005,
+      "p": 1.1573145216957591e-30,
       "IC95_inf": 0.39319153682448715,
       "IC95_sup": 0.5545599354499282,
       "OR": 1.6062073810921949,
@@ -24811,6 +25199,9 @@
       "modelo": "M1_informado",
       "predictor": "ExitRates",
       "coef": -1.4021249403627107,
+      "error_estandar": 0.10482477124154325,
+      "z": -13.375893157275335,
+      "p": 8.364288555843414e-41,
       "IC95_inf": -1.6075777166837855,
       "IC95_sup": -1.196672164041636,
       "OR": 0.24607351644392614,
@@ -24821,6 +25212,9 @@
       "modelo": "M1_informado",
       "predictor": "VisitorType_New_Visitor",
       "coef": 0.5298351125120819,
+      "error_estandar": 0.0855871355941177,
+      "z": 6.190592883312909,
+      "p": 5.993833533096183e-10,
       "IC95_inf": 0.36208740920766513,
       "IC95_sup": 0.6975828158164987,
       "OR": 1.6986521990319574,
@@ -24831,6 +25225,9 @@
       "modelo": "M1_informado",
       "predictor": "VisitorType_Other",
       "coef": 0.5980301387866579,
+      "error_estandar": 0.37388046910946793,
+      "z": 1.5995222756917038,
+      "p": 0.10970460306650594,
       "IC95_inf": -0.13476211519083947,
       "IC95_sup": 1.3308223927641554,
       "OR": 1.8185330121516141,
@@ -24841,6 +25238,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "const",
       "coef": -2.3856612193108755,
+      "error_estandar": 0.05726575427667027,
+      "z": -41.65947431312853,
+      "p": 0.0,
       "IC95_inf": -2.49790003524067,
       "IC95_sup": -2.273422403381081,
       "OR": null,
@@ -24851,6 +25251,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "ProductRelated",
       "coef": -0.1305140737092066,
+      "error_estandar": 0.07579039356614657,
+      "z": -1.7220397938071077,
+      "p": 0.08506231011834114,
       "IC95_inf": -0.27906051547297006,
       "IC95_sup": 0.018032368054556908,
       "OR": 0.8776441411533915,
@@ -24861,6 +25264,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "ProductRelated_Duration",
       "coef": 0.5847321598214108,
+      "error_estandar": 0.07648189046243901,
+      "z": 7.645367501847752,
+      "p": 2.0834939756057022e-14,
       "IC95_inf": 0.43483040904549286,
       "IC95_sup": 0.7346339105973287,
       "OR": 1.7945102793128482,
@@ -24871,6 +25277,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "ExitRates",
       "coef": -1.4398334356460383,
+      "error_estandar": 0.10743640849799314,
+      "z": -13.401727177737271,
+      "p": 5.907223427424357e-41,
       "IC95_inf": -1.6504049269304377,
       "IC95_sup": -1.2292619443616388,
       "OR": 0.23696722568798917,
@@ -24881,6 +25290,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "VisitorType_New_Visitor",
       "coef": 0.5093737780596304,
+      "error_estandar": 0.08633554322499379,
+      "z": 5.8999313496201955,
+      "p": 3.6365285052562716e-09,
       "IC95_inf": 0.34015922275294147,
       "IC95_sup": 0.6785883333663192,
       "OR": 1.6642486795195923,
@@ -24891,6 +25303,9 @@
       "modelo": "M2_stepwise_AIC",
       "predictor": "VisitorType_Other",
       "coef": 0.5547186351376864,
+      "error_estandar": 0.3748187348824986,
+      "z": 1.4799650698132374,
+      "p": 0.13888256874779523,
       "IC95_inf": -0.17991258596287774,
       "IC95_sup": 1.2893498562382506,
       "OR": 1.7414509327336813,
@@ -24901,6 +25316,9 @@
       "modelo": "M3_reducido_BIC",
       "predictor": "const",
       "coef": -2.378773056464126,
+      "error_estandar": 0.056861515507709744,
+      "z": -41.834499753028794,
+      "p": 0.0,
       "IC95_inf": -2.4902195789656028,
       "IC95_sup": -2.2673265339626494,
       "OR": null,
@@ -24911,6 +25329,9 @@
       "modelo": "M3_reducido_BIC",
       "predictor": "ProductRelated_Duration",
       "coef": 0.4738757361372077,
+      "error_estandar": 0.04116616425054091,
+      "z": 11.51129197399005,
+      "p": 1.1573145216957591e-30,
       "IC95_inf": 0.39319153682448715,
       "IC95_sup": 0.5545599354499282,
       "OR": 1.6062073810921949,
@@ -24921,6 +25342,9 @@
       "modelo": "M3_reducido_BIC",
       "predictor": "ExitRates",
       "coef": -1.4021249403627107,
+      "error_estandar": 0.10482477124154325,
+      "z": -13.375893157275335,
+      "p": 8.364288555843414e-41,
       "IC95_inf": -1.6075777166837855,
       "IC95_sup": -1.196672164041636,
       "OR": 0.24607351644392614,
@@ -24931,6 +25355,9 @@
       "modelo": "M3_reducido_BIC",
       "predictor": "VisitorType_New_Visitor",
       "coef": 0.5298351125120819,
+      "error_estandar": 0.0855871355941177,
+      "z": 6.190592883312909,
+      "p": 5.993833533096183e-10,
       "IC95_inf": 0.36208740920766513,
       "IC95_sup": 0.6975828158164987,
       "OR": 1.6986521990319574,
@@ -24941,6 +25368,9 @@
       "modelo": "M3_reducido_BIC",
       "predictor": "VisitorType_Other",
       "coef": 0.5980301387866579,
+      "error_estandar": 0.37388046910946793,
+      "z": 1.5995222756917038,
+      "p": 0.10970460306650594,
       "IC95_inf": -0.13476211519083947,
       "IC95_sup": 1.3308223927641554,
       "OR": 1.8185330121516141,
@@ -52381,7 +52811,44 @@
         "alcance": "Condicional a modelos ajustados; no bootstrap de entrenamiento, selección ni coeficientes."
       },
       "conclusion_operativa": "La configuración L2 (umbral 0,225, peso de compra 1,000 frente a 1 y C=0,100) reduce falsas alarmas frente a la referencia no penalizada de 886 a 670, pero las compras detectadas pasan de 331 a 282. Cumple recall interno agregado de 50,75 %, con 3 de 5 folds sobre el mínimo. En prueba obtiene recall 49,30 % y precision 29,62 %; no cumple el 50 % en ese conjunto. Es una alternativa más conservadora, no una mejora global de discriminación. No se ajusta otra vez para corregir la prueba. Su utilidad depende del costo de falsas alarmas y compras omitidas; antes de uso operativo se requiere validación con nuevas sesiones y disponibilidad temporal de variables. PageValues sigue excluida."
-    }
+    },
+    "respuesta_retroalimentacion_formativa2": [
+      {
+        "observacion": "Conservar MCAR y partición estratificada",
+        "respuesta": "Mismos 1.233 valores ocultados y mismos índices train/test. Valores originales solo para auditoría.",
+        "ubicacion": "1–3 y protocolo data/preparacion_modelamiento.json"
+      },
+      {
+        "observacion": "Comparar eliminación, mediana y regresión",
+        "respuesta": "Errores en valores conocidos/ocultados, cobertura, distribución, correlaciones e impacto en modelo final.",
+        "ubicacion": "2–3 y 9"
+      },
+      {
+        "observacion": "Tres logísticas con resumen, p e IC",
+        "respuesta": "N, log-verosimilitud, deviance, AIC/BIC, convergencia; beta, SE, z, p, IC y OR. Alcance exploratorio postselección.",
+        "ubicacion": "4"
+      },
+      {
+        "observacion": "Rebote y salida: revisar VIF y conservar una tasa en el clasificador final",
+        "respuesta": "Se muestran tasas retenidas y VIF de cada logístico. El imputador se audita por separado, incluida la limitación que persiste.",
+        "ubicacion": "3.1 y 4"
+      },
+      {
+        "observacion": "Ponderar compras (~3,23) y comparar con recall/AUC iniciales",
+        "respuesta": "Pesos balanceados calculados solo en train y comparación a umbral común; referencia de Formativa 2 recuperada de JSON.",
+        "ubicacion": "5–6 y 6.3"
+      },
+      {
+        "observacion": "Bootstrap de coeficientes del mejor modelo",
+        "respuesta": "1.000 reajustes del modelo de referencia. IC separados de la alternativa L2 y del bootstrap de métricas.",
+        "ubicacion": "8; 6.2 tiene otro objetivo"
+      },
+      {
+        "observacion": "Adjuntar ipynb y demás productos en Canvas; reiniciar kernel",
+        "respuesta": "Lista manual de entrega con todas las casillas pendientes hasta la comprobación final del equipo.",
+        "ubicacion": "10.2"
+      }
+    ]
   },
   "revision_rubrica": [
     {
